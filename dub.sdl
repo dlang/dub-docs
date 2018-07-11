@@ -1,0 +1,22 @@
+name "dub-docs"
+description "Documentation for dub"
+homepage "https://dub.pm"
+authors "Sönke Ludwig" "Martin Nowak" "Anton Fediushin aka ohdatboi" \
+	"Jan Jurzitza aka WebFreak001" "Sebastian Wilzbach" "Colden Cullen" \
+	"see GitHub for more"
+license "BSL-1.0"
+
+dependency "vibe-d:web" version="~>0.8.4"
+// needed to avoid warnings about the package not being a dependency
+dependency "vibe-d:tls" version="~>0.8.4"
+dependency "dub" version="~>1.7.0"
+subConfiguration "dub" "library-nonet"
+subConfiguration "vibe-d:tls" "notls"
+
+versions "VibeJsonFieldNames"
+versions "VibeNoSSL"
+
+configuration "application" {
+	targetType "executable"
+	mainSourceFile "source/app.d"
+}
