@@ -58,7 +58,7 @@ block body
 					copyright "Copyright © 2017, imadev"
 					license "Boost"
 
-	p For more information and help with configuring your builds, see the documentation for <a href="package-format?json">JSON</a> and <a href="package-format?sdl">SDLang</a>. DUB is smart and will provide sane defaults, but you can override almost anything.
+	p For more information and help with configuring your builds, see the documentation for <a href="package-format-json">JSON</a> and <a href="package-format-sdl">SDLang</a>. DUB is smart and will provide sane defaults, but you can override almost anything.
 
 	p Execute <code>dub build</code> to build your project, <code>dub run</code> to build and run it, or <code>dub test</code> to build and run unit tests. The last line below is the output of the default application.
 
