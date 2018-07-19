@@ -42,7 +42,7 @@
 			a.expand-toggle(href="search.html", title="Search")
 				span Search
 			#search-box
-				form(method="GET", action="#{req.rootDir}search")
+				form(method="GET", action="https://code.dlang.org/search")
 					span#search-query
 						input#q(name="q", placeholder="Search for a package")
 					span#search-submit
