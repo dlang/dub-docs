@@ -22,7 +22,7 @@ block body
 			writeln("Hello, World!");
 		}
 
-	p This application can be executed by running <code>dub run --single hello.d</code>.
+	p This application can be executed by running <code>dub run --single hello.d</code>, or just compiled with <code>dub build --single hello.d</code>.
 
 	p In addition to the normal method of passing commandline arguments, you can use the shorthand <code>dub hello.d &lt;arguments to hello&gt;</code>. This shorthand and the optional shebang allow you to run applications via <code>./hello &lt;arguments&gt;</code> from your shell if you set the executable bit of the file.
 
