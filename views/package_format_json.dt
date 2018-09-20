@@ -563,6 +563,10 @@ block body
 			td "property"
 			td Enforce property syntax - <span style="color: red;">deprecated</span>
 			td -property
+		tr
+			td "betterC"
+			td Compile in betterC mode
+			td -betterC
 
 	h3#environment-variables Environment variables
 	include inc.package_format.envvars
