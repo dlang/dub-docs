@@ -76,6 +76,11 @@ block body
 			td Brief description of the package
 
 		tr
+			td minDubVersion
+			td: code string
+			td Minimum version of DUB necessary to build the package
+
+		tr
 			td homepage
 			td: code string
 			td URL of the project website
