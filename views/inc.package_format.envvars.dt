@@ -41,6 +41,9 @@ table
 		td: code $DUB_PACKAGE
 		td Name of the package
 	tr
+		td: code $DUB_PACKAGE_VERSION
+		td Version of the package
+	tr
 		td: code $DUB_ROOT_PACKAGE
 		td Name of the root package that is being built
 	tr
