@@ -9,7 +9,7 @@ license "BSL-1.0"
 dependency "vibe-d:web" version="~>0.8.4"
 // needed to avoid warnings about the package not being a dependency
 dependency "vibe-d:tls" version="~>0.8.4"
-dependency "dub" version="~>1.7.0"
+dependency "dub" version="~master"
 subConfiguration "dub" "library-nonet"
 subConfiguration "vibe-d:tls" "notls"
 
