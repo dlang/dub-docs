@@ -343,6 +343,14 @@ block body
 			td postBuildCommands
 			td: code string[]
 			td A list of shell commands that is executed always after the project is built
+		tr
+			td preRunCommands
+			td: code string[]
+			td A list of shell commands that is executed always before the project is run
+		tr
+			td postRunCommands
+			td: code string[]
+			td A list of shell commands that is executed always after the project is run
 
 		tr
 			td dflags
