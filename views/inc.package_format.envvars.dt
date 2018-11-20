@@ -74,7 +74,7 @@ table
 		td: code $D_FRONTEND_VER
 		td The compiler frontend version represented as a single integer, for example "2072" for DMD 2.072.2
 	tr
-		td: code $DUB
+		td: code $DUB_EXE
 		td Path to the DUB executable
 	tr
 		td: code $DUB_PLATFORM
