@@ -10,7 +10,7 @@
 			- import std.range : empty;
 			- import std.string : split;
 			- import std.typecons : tuple;
-			- auto listitems = [tuple("Packages", ["https://code.dlang.org"]), tuple("Documentation", ["Getting Started;getting_started", "Advanced Usage;advanced_usage", "Command line documentation;commandline", "Development;develop", "Package format (JSON);package-format-json", "Package format (SDLang);package-format-sdl"]), tuple("About",  ["Forums;http://forum.rejectedsoftware.com/groups/rejectedsoftware.dub", "Bug tracker (website);https://github.com/dlang/dub-registry/issues", "Bug tracker (DUB);https://github.com/dlang/dub/issues", "Github repository (website);https://github.com/dlang/dub-registry", "GitHub repository (DUB);https://github.com/dlang/dub"]), tuple("Download", ["https://code.dlang.org/download"])];
+			- auto listitems = [tuple("Packages", ["https://code.dlang.org"]), tuple("Documentation", ["Getting Started;getting_started", "Advanced Usage;advanced_usage", "Command line documentation;commandline", "Development;develop", "Package format (JSON);package-format-json", "Package format (SDLang);package-format-sdl", "Settings;settings"]), tuple("About",  ["Forums;http://forum.rejectedsoftware.com/groups/rejectedsoftware.dub", "Bug tracker (website);https://github.com/dlang/dub-registry/issues", "Bug tracker (DUB);https://github.com/dlang/dub/issues", "Github repository (website);https://github.com/dlang/dub-registry", "GitHub repository (DUB);https://github.com/dlang/dub"]), tuple("Download", ["https://code.dlang.org/download"])];
 			ul
 				- foreach(items; listitems)
 					- if(items[1].length < 2)

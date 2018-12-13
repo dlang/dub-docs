@@ -1,0 +1,76 @@
+extends layout
+
+block title
+	- auto title = "Settings";
+
+block body
+	h2 Configuring default settings
+
+	p User/System wide default DUB values can be specified in settings.json file.
+
+	p A settings.json file could look like this:
+
+	pre.code
+		|{
+		|	"defaultArchitecture": "x86_64",
+		|	"defaultCompiler": "ldc"
+		|}
+
+	p The file settings.json can be located in different locations. Last item in list has highest priority.
+	
+	p Windows
+		ul
+			li <code>%ProgramData%\dub\settings.json</code>
+			li <code>&lt;dub executable folder&gt;\..\etc\dub\settings.json</code>
+			li <code>%APPDATA%\dub\settings.json</code>
+
+	p Posix
+		ul
+			li <code>/var/lib/dub/settings.json</code>
+			li <code>&lt;dub executable folder&gt;/../etc/dub/settings.json</code>
+			li <code>~/.dub/settings.json</code>
+			
+	h3 Settings overview
+
+	table
+		tr
+			th Name
+			th Type
+			th Description
+
+		tr
+			td registryUrls
+			td: code string[]
+			td Search the given registry URL first when resolving dependencies. Can be specified multiple times. Available registry types:
+				ul
+					li DUB: URL to DUB registry (default)
+					li Maven: URL to Maven repository + group id containing dub packages as artifacts. E.g. mvn+http://localhost:8040/maven/libs-release/dubpackages
+
+		tr
+			td skipRegistry
+			td: code string
+			td 	Sets a mode for skipping the search on certain package registry types: 
+				ul
+					li none: Search all configured or default registries (default) 
+					li standard: Don't search the main registry (e.g. https://code.dlang.org/) 
+					li configured: Skip all default and user configured registries 
+					li all: Only search registries specified with --registry
+
+		tr
+			td customCachePaths
+			td: code string[]
+			td 
+				p Additional paths that contain packages in subfolders with the pattern "(name)-(version)/(name)/".
+				p Can be used to provide prebuilt DUB libraries (e.g. for distribution package maintainers).
+
+		tr
+			td defaultCompiler
+			td: code string
+			td 
+				p Specifies the compiler binary to use (can be a path). 
+				p Arbitrary pre- and suffixes to the identifiers below are recognized (e.g. ldc2 or dmd-2.063) and matched to the proper compiler type: dmd, gdc, ldc, gdmd, ldmd
+
+		tr
+			td defaultArchitecture
+			td: code string
+			td Force a different architecture (e.g. x86 or x86_64) 

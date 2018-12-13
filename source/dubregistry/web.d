@@ -61,4 +61,10 @@ class DubRegistryFullWebFrontend {
 		auto commands = getCommands();
 		render!("docs.commandline.dt", commands);
 	}
+
+	@path("/settings")
+	void getSettings()
+	{
+		render!("settings.dt");
+	}
 }
