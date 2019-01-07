@@ -34,6 +34,9 @@ mv "127.0.0.1:8005" ${BUILD_DIR}
 find out -name "logo" | xargs -I {} mv {} {}.svg
 sed 's/src="\([^"]*\)\/logo"/src="\1\/logo.svg"/'  -i $(find out -name "*.html")
 
+# Replace all local links with dub.pm
+sed 's/http:\/\/127.0.0.1:8005/https:\/\/dub.pm/'  -i $(find out -name "*.html")
+
 kill -9 $PID_DOCS || true
 
 # Final cleanup (in case something was missed)
