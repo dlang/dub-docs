@@ -74,35 +74,7 @@ block body
 
 	h2#adding-deps Adding a dependency
 
-	p When you find a package to use from the <a href="https://code.dlang.org">DUB registry</a>, add it to the dependency list in your DUB configuration file:
-
-	table
-		tr
-			th JSON
-			th SDLang
-		tr
-			td
-				pre.code.lang-json
-					|{
-					|	"name": "myproject",
-					|	"authors": [
-					|		"My Name"
-					|	],
-					|	"description": "My first project",
-					|	"copyright": "Copyright © 2017, imadev",
-					|	"license": "Boost",
-					|	"dependencies": {
-					|		"dub": "~>1.3.0"
-					|	}
-					|}
-			td
-				pre.code.lang-sdl.
-					name "myproject"
-					description "My first project"
-					authors "My Name"
-					copyright "Copyright © 2017, imadev"
-					license "Boost"
-					dependency "dub" version="~>1.3.0"
+	p When you find a package to use from the <a href="https://code.dlang.org">DUB registry</a>, add it to the dependency list in your DUB configuration file by running <code>dub add &lt;packageName&gt;</code>.
 
 	p The DUB registry uses git tags to determine application versioning and DUB's dependency management is designed to work best according to <a href="http://semver.org">SemVer</a> rules. Please follow the rules of the SemVer specification for all packages you list on the registry. See the <a href="http://code.dlang.org/package-format?lang=json#version-specs">package documentation</a> for more information on dependency version specification.
 
