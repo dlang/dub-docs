@@ -12,6 +12,9 @@ table
 	tr
 		td: code $&lt;name&gt;_PACKAGE_DIR
 		td Path a specific package that is part of the package's dependency graph
+	tr
+		td: code $DUB
+		td Path to the DUB executable
 
 p Inside of build setting values, the following variables are also supported:
 table
@@ -73,6 +76,9 @@ table
 	tr
 		td: code $D_FRONTEND_VER
 		td The compiler frontend version represented as a single integer, for example "2072" for DMD 2.072.2
+	tr
+		td: code $DUB_EXE
+		td Path to the DUB executable
 	tr
 		td: code $DUB_PLATFORM
 		td Name of the target platform (e.g. "windows" or "linux")
