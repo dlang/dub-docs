@@ -50,7 +50,10 @@ block body
 				a(href="#configurations") Configurations
 				ul
 					li: a(href="#configuration-settings") Specific settings
-			li: a(href="#build-types") Build types
+			li
+				a(href="#build-types") Build types
+			li
+				a(href="#toolchain-requirements") Toolchain requirements
 
 
 
@@ -76,9 +79,9 @@ block body
 			td Brief description of the package
 
 		tr
-			td minDubVersion
-			td: code string
-			td Minimum version of DUB necessary to build the package
+			td toolchainRequirements
+			td: code string[string]
+			td Set of version requirements for DUB, for compilers and for language frontend. See the <a href="#toolchain-requirements">toolchain requirements</a> section.
 
 		tr
 			td homepage
@@ -389,7 +392,7 @@ block body
 					p With this set to <code>true</code>, the dependency will be chosen by default if no dub.selections.json exists yet. If omitted, this attribute defaults to <code>false</code>. Note that this only has an effect if the "optional" attribute is set to <code>true</code>.
 					p Note that versions prior to 0.9.25 will ignore this attribute.
 
-	p Version specifiers define a range of acceptable versions. They can be specified in any of the following ways:
+	p#version-syntax Version specifiers define a range of acceptable versions. They can be specified in any of the following ways:
 	ul
 		li Restrict to a certain minor version: <code>"~&gt;2.2.13"</code>, equivalent to <code>"&gt;=2.2.13 &lt;2.3.0"</code>
 		li Restrict to a certain major version: <code>"~&gt;2.2"</code>, equivalent to <code>"&gt;=2.2.0 &lt;3.0.0"</code>
@@ -722,5 +725,47 @@ block body
 		|		"debug-profile": {
 		|			"buildOptions": ["debugMode", "debugInfo", "profile"]
 		|		}
+		|	}
+		|}
+
+	h2#toolchain-requirements Toolchain requirements
+
+	p The package can specify version requirements for the toolchain. Each requirement is specified with the <a href="#version-syntax">version dependency syntax</a>. For compilers, the keyword <code>no</code> can be specified instead of a version requirement to disallow the use of a specific compiler for the package. The following requirements are allowed:
+	table
+		tr
+			th Identifier
+			th Description
+		tr
+			td <code>"dub"</code>
+			td DUB version requirement
+		tr
+			td <code>"frontend"</code>
+			td D frontend version requirement
+		tr
+			td <code>"dmd"</code>
+			td DMD version requirement
+		tr
+			td <code>"ldc"</code>
+			td LDC version requirement
+		tr
+			td <code>"gdc"</code>
+			td GDC version requirement
+
+	p Example 1: package that needs at least dub-1.14 and uses D features introduced in frontend 2.068 and other features that will be deprecated in frontend 2.087
+	pre.code
+		|{
+		|	"toolchainRequirements": {
+		|		"dub": "&gt;=1.14.0",
+		|		"frontend": "&gt;=2.068 &lt;2.087"
+		|	}
+		|}
+
+	p Example 2: package that needs to be compiled with LDC from version 1.11
+	pre.code
+		|{
+		|	"toolchainRequirements": {
+		|		"dmd": "no",
+		|		"gdc": "no",
+		|		"ldc": "&gt;=1.11"
 		|	}
 		|}
