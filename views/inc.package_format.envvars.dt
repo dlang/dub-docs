@@ -11,7 +11,7 @@ table
 		td Path to the root package of the build dependency tree
 	tr
 		td: code $&lt;name&gt;_PACKAGE_DIR
-		td Path a specific package that is part of the package's dependency graph
+		td Path a specific package that is part of the package's dependency graph. $&lt;name&gt; must be in uppercase letters without the semver string. 
 	tr
 		td: code $DUB
 		td Path to the DUB executable
