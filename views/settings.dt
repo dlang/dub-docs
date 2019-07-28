@@ -23,12 +23,14 @@ block body
 			li <code>%ProgramData%\dub\settings.json</code>
 			li <code>&lt;dub executable folder&gt;\..\etc\dub\settings.json</code>
 			li <code>%APPDATA%\dub\settings.json</code>
+			li <code>%ROOT_PACKAGE_DIR%\dub.settings.json</code>
 
 	p Posix
 		ul
 			li <code>/var/lib/dub/settings.json</code>
 			li <code>&lt;dub executable folder&gt;/../etc/dub/settings.json</code>
 			li <code>~/.dub/settings.json</code>
+			li <code>$ROOT_PACKAGE_DIR/dub.settings.json</code>
 			
 	h3 Settings overview
 
