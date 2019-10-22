@@ -333,19 +333,19 @@ block body
 		tr
 			td preGenerateCommands
 			td: code string[]
-			td A list of shell commands that is executed before project generation is started
+			td A list of shell commands that is always executed before project generation is started
 		tr
 			td postGenerateCommands
 			td: code string[]
-			td A list of shell commands that is executed after project generation is finished
+			td A list of shell commands that is always executed after project generation is finished
 		tr
 			td preBuildCommands
 			td: code string[]
-			td A list of shell commands that is executed always before the project is built
+			td A list of shell commands that is executed before the package is built
 		tr
 			td postBuildCommands
 			td: code string[]
-			td A list of shell commands that is executed always after the project is built
+			td A list of shell commands that is executed after the package is built
 		tr
 			td preRunCommands
 			td: code string[]
