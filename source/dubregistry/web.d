@@ -67,4 +67,10 @@ class DubRegistryFullWebFrontend {
 	{
 		render!("settings.dt");
 	}
+
+	@path("/package-suppliers")
+	void getPackageSuppliers()
+	{
+		render!("package_suppliers.dt");
+	}
 }
