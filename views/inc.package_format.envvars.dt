@@ -50,6 +50,15 @@ table
 		td: code $DUB_ROOT_PACKAGE
 		td Name of the root package that is being built
 	tr
+		td: code $DUB_ROOT_PACKAGE_TARGET_TYPE
+		td Contents of the "targetType" field of the root package as defined by the package recipe
+	tr
+		td: code $DUB_ROOT_PACKAGE_TARGET_PATH
+		td Contents of the "targetPath" field of the root package as defined by the package recipe
+	tr
+		td: code $DUB_ROOT_PACKAGE_TARGET_NAME
+		td Contents of the "targetName" field of the root package as defined by the package recipe
+	tr
 		td: code $DFLAGS
 		td Contents of the "dflags" field as defined by the package recipe
 	tr
