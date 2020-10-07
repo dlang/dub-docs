@@ -71,6 +71,9 @@ table
 		td: code $LIBS
 		td Contents of the "libs" field as defined by the package recipe
 	tr
+		td: code $SOURCE_FILES
+		td Contents of the "sourceFiles" field as defined by the package recipe
+	tr
 		td: code $IMPORT_PATHS
 		td Contents of the "importPaths" field as defined by the package recipe
 	tr
