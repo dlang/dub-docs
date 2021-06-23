@@ -576,6 +576,10 @@ block body
 			td "betterC"
 			td Compile in betterC mode
 			td -betterC
+		tr
+			td "lowmem"
+			td Enable the garbage collector for the compiler(dmd/ldc), reducing the compiler memory requirements but increasing compile times.
+			td -lowmem
 
 	h3#environment-variables Environment variables
 	include inc.package_format.envvars
