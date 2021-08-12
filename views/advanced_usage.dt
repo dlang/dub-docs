@@ -34,7 +34,7 @@ block body
 
 	dl
 		dt <code>dub add-path</code>
-		dd Adds a local search directory. All direct subdirectories will be searched for packages. Local search directories are preferred over packages downloaded from the registry.
+		dd Adds a local search directory. All direct subdirectories will be searched for packages. Local search directories are manual overrides over the packages downloaded from the registry, so they will always be searched before looking into the registry.
 
 		dt <code>dub add-local</code>
 		dd Similar to the above, but only adds a single package directory.
@@ -52,7 +52,7 @@ block body
 
 	h2#subpkg Managing subpackages
 
-	p For adding subpackages in your project, execute <code> dub add &lt;packagename&gt;:&lt;subpackage&gt; </code>
+	p For adding subpackages from the registry, execute <code> dub add &lt;packagename&gt;:&lt;subpackage&gt; </code>
 
 	p If you need to compile a subpackage only, use <code> dub build :&lt;subpackage&gt; </code>
 	
