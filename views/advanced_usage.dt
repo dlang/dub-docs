@@ -55,3 +55,4 @@ block body
 	p For adding subpackages in your project, execute <code> dub add &lt;packagename&gt;:&lt;subpackage&gt; </code>
 
 	p If you need to compile a subpackage only, use <code> dub build :&lt;subpackage&gt;
+	
