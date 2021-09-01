@@ -643,7 +643,7 @@ block body
 
 		tr
 			td platforms
-			td: code "&lt;spec1&gt; ["&lt;spec2&gt;" [...]]
+			td: code "&lt;spec1&gt;" ["&lt;spec2&gt;" [...]]
 			td A list of <a href="#platform-specs">platform specifiers</a> to limit on which platforms the configuration applies
 
 	h2#build-types Build types
