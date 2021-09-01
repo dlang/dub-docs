@@ -241,7 +241,7 @@ block body
 		tr
 			td dependencies
 			td: code T[string]
-			td List of project dependencies given as pairs of <code>"&lt;name&gt;" : &lt;version-spec&gt;</code> - see <a href="#version-specs">next section</a> for how version specifications look like - this setting does not support platform suffixes
+			td List of project dependencies given as pairs of <code>"&lt;name&gt;" : &lt;version-spec&gt;</code> - see <a href="#version-specs">next section</a> for what version specifications look like - this setting does not support platform suffixes
 
 		tr
 			td systemDependencies
