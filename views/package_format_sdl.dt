@@ -212,7 +212,7 @@ block body
 		tr
 			td dependency
 			td: code "&lt;name&gt;" ...
-			td Adds a single dependency of the given name, attributes are used to configure the version/path to use - see <a href="#version-specs">next section</a> for how version specifications look like. Use multiple <code>dependency</code> directives to add more than one dependency - this setting does not support the platform attribute
+			td Adds a single dependency of the given name, attributes are used to configure the version/path to use - see <a href="#version-specs">next section</a> for what version specifications look like. Use multiple <code>dependency</code> directives to add more than one dependency - this setting does not support the platform attribute
 
 		tr
 			td systemDependencies
@@ -643,7 +643,7 @@ block body
 
 		tr
 			td platforms
-			td: code "&lt;spec1&gt; ["&lt;spec2&gt;" [...]]
+			td: code "&lt;spec1&gt;" ["&lt;spec2&gt;" [...]]
 			td A list of <a href="#platform-specs">platform specifiers</a> to limit on which platforms the configuration applies
 
 	h2#build-types Build types
