@@ -106,7 +106,7 @@ block body
 		tr
 			td subPackages
 			td: code T[]
-			td Defines an array of sub-packages defined in the same directory as the root project, where each entry is either a path of a sub folder or an object of the same formatas a dub.json file - see the <a href="#sub-packages">sub package section</a> for more information
+			td Defines an array of sub-packages defined in the same directory as the root project, where each entry is either a path of a sub folder or an object of the same format as a dub.json file - see the <a href="#sub-packages">sub package section</a> for more information
 
 		tr
 			td configurations
