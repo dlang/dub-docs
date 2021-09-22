@@ -34,7 +34,7 @@ block body
 
 	dl
 		dt <code>dub add-path</code>
-		dd Adds a local search directory. All direct subdirectories will be searched for packages. Local search directories are manual overrides over the packages downloaded from the registry, so they will always be searched before looking into the registry.
+		dd Adds a local search directory. All direct subdirectories will be searched for packages. Local search directories are always searched before looking up packages from the registry.
 
 		dt <code>dub add-local</code>
 		dd Similar to the above, but only adds a single package directory.
