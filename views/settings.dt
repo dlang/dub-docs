@@ -92,7 +92,7 @@ block body
 		tr
 			td defaultBuildEnvironments
 			td: code string[string]
-			td Sets the keys in buildEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by build tools (compiler, linker), preBuildCommands and postBuildCommands invocations. Overrides keys from defaultEnvironments.
+			td Sets the keys in buildEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by build tools (compiler, linker), preBuildCommands, postBuildCommands, preGenerateCommands and postGenerateCommands invocations. Overrides keys from defaultEnvironments.
 
 		tr
 			td defaultRunEnvironments
