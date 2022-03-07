@@ -122,6 +122,9 @@ table
 		td: code $DUB_BUILD_MODE
 		td Name of the selected build mode (e.g. "separate" or "singleFile")
 	tr
+		td: code $DUB_BUILD_PATH
+		td Absolute path in which the package was compiled (defined for "postBuildCommands" only)
+	tr
 		td: code $DUB_COMBINED
 		td "TRUE" if the #[code --combined] flag was used, empty otherwise
 	tr
