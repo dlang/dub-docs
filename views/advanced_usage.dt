@@ -55,4 +55,27 @@ block body
 	p For adding subpackages from the registry, execute <code> dub add &lt;packagename&gt;:&lt;subpackage&gt; </code>
 
 	p If you need to compile a subpackage only, use <code> dub build :&lt;subpackage&gt; </code>
-	
+
+	h2#have-version Conditional compilation according to dependency presence
+
+	p Projects can have additional special dependencies for specific configurations.
+
+	pre.code
+		|"configurations": [
+		|	{
+		|		"name": "myconfig",
+		|		"dependencies": {
+		|			"mydep": { "version": "*" }
+		|		}
+		|	}
+		|]
+
+	p DUB provides version identifier of dependencies for conditional compilation with <a href="https://dlang.org/spec/version.html#version">version conditions</a>. <code>Have_&lt;dependency&gt;</code> version identifier can be used for conditional compilation.
+
+	p
+		strong NOTE: Special characters other than identifier characters (<code>[a-z, A-Z, 0-9, _]</code>) in dependency name are replaced with <code>_</code> character in version identifier.
+
+	pre.code.
+		version (Have_mydep) {
+			import mydep;
+		}
