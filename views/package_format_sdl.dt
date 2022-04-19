@@ -343,6 +343,10 @@ block body
 			td: code "&lt;flag1&gt;" ["&lt;flag2&gt;" [...]]
 			td Additional flags passed to the linker - note that these flags are usually specific to the linker in use
 
+		tr
+			td injectSourceFiles
+			td: code string[]
+			td Source files that will be compiled into binaries that depend on this package. Warning: this should be under a permissive license (like Boost) or you risk infecting a users binary with an incompatible license.
 
 	h3#platform-specs Platform specifications
 
