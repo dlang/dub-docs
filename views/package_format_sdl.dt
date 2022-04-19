@@ -345,7 +345,7 @@ block body
 
 		tr
 			td injectSourceFiles
-			td: code string[]
+			td: code "&lt;pattern1&gt;" ["&lt;pattern2&gt;" [...]]
 			td Source files that will be compiled into binaries that depend on this package. Warning: this should be under a permissive license (like Boost) or you risk infecting a users binary with an incompatible license.
 
 	h3#platform-specs Platform specifications
