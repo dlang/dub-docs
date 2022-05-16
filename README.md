@@ -1,7 +1,7 @@
 DUB docs
 ========
 
-test
+test2
 
 Documentation for [dub](https://github.com/dlang/dub/) packages, see <https://dub.pm>.
 
