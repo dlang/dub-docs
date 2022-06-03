@@ -501,6 +501,10 @@ block body
 			td Enable code coverage analysis
 			td -cov
 		tr
+			td "coverageCTFE"
+			td Enable code coverage analysis (including code executed at compile-time via CTFE)
+			td -cov=ctfe
+		tr
 			td "debugInfo"
 			td Enable symbolic debug information
 			td -g
@@ -692,8 +696,14 @@ block body
 			td cov
 			td <code>"coverage" "debugInfo"</code>
 		tr
+			td cov-ctfe
+			td <code>["coverageCTFE", "debugInfo"]</code>
+		tr
 			td unittest-cov
 			td <code>"unittests" "coverage" "debugMode" "debugInfo"</code>
+		tr
+			td unittest-cov-ctfe
+			td <code>["unittests", "coverageCTFE", "debugMode", "debugInfo"]</code>
 		tr
 			td syntax
 			td <code>"syntaxOnly"</code>
