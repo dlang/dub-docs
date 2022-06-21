@@ -386,6 +386,10 @@ block body
 			p With this set to <code>true</code>, the dependency will be chosen by default if no dub.selections.json exists yet. If omitted, this attribute defaults to <code>false</code>. Note that this only has an effect if the "optional" attribute is set to <code>true</code>.
 			p Note that versions prior to 0.9.25 will ignore this attribute.
 		li
+			p <code>repository="git+https://example.org/repository.git"</code> - clone a git repository as dependency.
+			p This also requires a <code>version</code> attribute to be set to the git commit hash (7 to 40 hex characters).
+			p Supported since DUB v1.23.0.
+		li
 			p Since v1.24.0, <a href="#build-settings">build settings</a> fields can be used to be applied to dependencies.
 			p Note that as of v1.24.0 only <code>dflags</code> is taken into account.
 
