@@ -28,6 +28,7 @@ block body
 	p Posix
 		ul
 			li <code>/var/lib/dub/settings.json</code>
+			li <code>/etc/dub/settings.json</code> (only if DUB has been installed in `/usr/...`)
 			li <code>&lt;dub executable folder&gt;/../etc/dub/settings.json</code>
 			li <code>~/.dub/settings.json</code>
 			li <code>$ROOT_PACKAGE_DIR/dub.settings.json</code>
