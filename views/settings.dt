@@ -34,6 +34,8 @@ block body
 			li <code>$ROOT_PACKAGE_DIR/dub.settings.json</code>
 			
 	h3 Settings overview
+	
+	// implementation: https://github.com/dlang/dub/blob/27908126db37c01435110143971904a0b32303b6/source/dub/dub.d#L1903
 
 	table
 		tr
@@ -82,3 +84,60 @@ block body
 			td defaultLowMemory
 			td: code bool
 			td Enable the garbage collector for the compiler(dmd/ldc), reducing the compiler memory requirements but increasing compile times.
+
+		tr
+			td defaultEnvironments
+			td: code string[string]
+			td Sets the keys in environments if they are not overriden by the dub recipe. Defines default environment variables used by all executable invocations. This has the lowest precedence.
+
+		tr
+			td defaultBuildEnvironments
+			td: code string[string]
+			td Sets the keys in buildEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by build tools (compiler, linker), preBuildCommands, postBuildCommands, preGenerateCommands and postGenerateCommands invocations. Overrides keys from defaultEnvironments.
+
+		tr
+			td defaultRunEnvironments
+			td: code string[string]
+			td Sets the keys in runEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by the built user program, preRunCommands and postRunCommands invocations. Overrides keys from defaultEnvironments.
+
+		tr
+			td defaultPreGenerateEnvironments
+			td: code string[string]
+			td Sets the keys in preGenerateEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by preGenerateCommands invocations. Overrides keys from defaultEnvironments.
+
+		tr
+			td defaultPostGenerateEnvironments
+			td: code string[string]
+			td Sets the keys in postGenerateEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by postGenerateCommands invocations. Overrides keys from defaultEnvironments.
+
+		tr
+			td defaultPreBuildEnvironments
+			td: code string[string]
+			td Sets the keys in preBuildEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by preBuildCommands invocations. Overrides keys from defaultBuildEnvironments and defaultEnvironments.
+
+		tr
+			td defaultPostBuildEnvironments
+			td: code string[string]
+			td Sets the keys in postBuildEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by postBuildCommands invocations. Overrides keys from defaultBuildEnvironments and defaultEnvironments.
+
+		tr
+			td defaultPreRunEnvironments
+			td: code string[string]
+			td Sets the keys in preRunEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by preRunCommands invocations. Overrides keys from defaultRunEnvironments and defaultEnvironments.
+
+		tr
+			td defaultPostRunEnvironments
+			td: code string[string]
+			td Sets the keys in postRunEnvironments if they are not overriden by the dub recipe. Defines default environment variables used by postRunCommands invocations. Overrides keys from defaultRunEnvironments and defaultEnvironments.
+
+	h3 Environment Variables
+	
+	// test case: https://github.com/dlang/dub/blob/master/test/environment-variables.script.d#L10
+	
+	p Environment variables are set by keys using the defaultEnvironments and related settings in the settings and with highest precedence environments and related settings in the package recipe.
+	
+	p For finding the default environment variables first the system environment variables are loaded, then overriden by the settings environment variables. This goes through all the default settings first.
+		
+	p Afterwards dependency or recipe environment variables override these default environment variables. Recipe variables have higher precedence than dependency variables.
+	
+	p Defining a generic environments block inside a dependency overrides the keys set by e.g. defaultPreRunEnvironments inside the settings.
