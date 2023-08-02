@@ -8,6 +8,8 @@ block body
 
 	p DUB is the D language's official package manager, providing simple and configurable cross-platform builds. DUB can also generate VisualD and Mono-D package files for easy IDE support.
 
+	p DUB comes with the standard `dmd` package/installer from <a href="https://dlang.org">dlang.org</a>.
+
 	p To install DUB, search your operating system's package manager or <a href="https://github.com/dlang/dub/releases">download</a> the pre-compiled package for your platform. The Windows installer will perform all installation steps; for other archives, you will want to ensure the DUB executable is in your path. Installation from source on other platforms is as simple as installing the dmd development files and your system's libcurl-dev, then running <code>./build.sh</code> in the repository's folder.
 
 	h2#own-projects Starting a new project
