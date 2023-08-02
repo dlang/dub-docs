@@ -10,6 +10,24 @@ block body
 
 	p To install DUB, search your operating system's package manager or <a href="https://github.com/dlang/dub/releases">download</a> the pre-compiled package for your platform. The Windows installer will perform all installation steps; for other archives, you will want to ensure the DUB executable is in your path. Installation from source on other platforms is as simple as installing the dmd development files and your system's libcurl-dev, then running <code>./build.sh</code> in the repository's folder.
 
+	h2#running Running DUB
+
+	p Some common commands:
+
+	ul
+		li #[code dub build] - build the project in the current folder
+		li #[code dub run] - build & run the project in the current folder (default)
+		li #[code dub run package] - build & run the latest version of `package`
+		li #[code dub fetch package] - fetch the latest version of `package`
+
+	p Other versions of `package` can be specified:
+
+	ul
+		li #[code package@1.0] - the 1.0 version of `package`
+		li #[code package@~master] - the latest git `master` version of `package`
+
+	p See a(href="commandline") for more details.
+
 	h2#own-projects Starting a new project
 
 	p From your top-level source directory, run:
