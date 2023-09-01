@@ -1,6 +1,6 @@
 # Installing DUB
 
-## Bundled with the compiler
+## Dub is bundled with the compiler
 
 DUB is being distributed alongside with [the major D compilers](https://dlang.org/download.html) whenever installing their full packages.
 
@@ -50,7 +50,7 @@ gdc build.d && ./a.out
 
 ## Third-party downloads
 
-These links are not maintained by the same people maintaining the official downloads. 
+These links are not maintained by the same people maintaining the official downloads.
 
 <div markdown="1" class="install os-arch">
 
