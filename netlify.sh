@@ -6,5 +6,10 @@ set -x
 
 BUILD_DIR="out"
 
+./dub/scripts/man/gen_man.d
+rm -rf docs/cli-reference/
+mkdir docs/cli-reference/
+cp dub/scripts/man/*.md docs/cli-reference/
+
 pip3 install -r requirements.txt
 mkdocs build -d "$BUILD_DIR"

@@ -1,0 +1,3 @@
+[submodule "dub"]
+	path = dub
+	url = https://github.com/dlang/dub.git
