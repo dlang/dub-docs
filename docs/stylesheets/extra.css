@@ -241,9 +241,3 @@ div.install.os-snap {
 div.install.os-openbsd {
     background-image: url(../images/product/openbsd_logo.png);
 }
-
-/* hide table of contents, we use inline header links instead */
-
-.md-header__source {
-    display: none;
-}

@@ -22,4 +22,4 @@ For more information see [Registries](../dub-reference/registries.md).
 
 The documentation pages you are reading right now are also available on GitHub:
 
-[https://github.com/WebFreak001/dub-docs-v2](https://github.com/WebFreak001/dub-docs-v2)
+[https://github.com/dlang/dub-docs](https://github.com/dlang/dub-docs)

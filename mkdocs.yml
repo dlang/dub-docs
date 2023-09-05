@@ -1,6 +1,6 @@
 site_name: DUB Documentation
 
-repo_url: https://github.com/WebFreak001/dub-docs-v2
+repo_url: https://github.com/dlang/dub-docs
 
 theme:
   name: material
