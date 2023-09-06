@@ -11,10 +11,7 @@ CURL_FLAGS=(-fsSL --retry 10 --retry-delay 30 --retry-max-time 600 --connect-tim
 
 . "$(curl "${CURL_FLAGS[@]}" https://dlang.org/install.sh | bash -s install "dmd-${DMD_VERSION}" --activate)"
 
-./dub/scripts/man/gen_man.d
-rm -rf docs/cli-reference/
-mkdir docs/cli-reference/
-cp dub/scripts/man/*.md docs/cli-reference/
+./regenerate-cli-docs.sh
 
 pip3 install -r requirements.txt
 mkdocs build -d "$BUILD_DIR"
