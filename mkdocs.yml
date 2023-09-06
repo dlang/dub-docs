@@ -39,6 +39,17 @@ plugins:
   - search
   - git-revision-date-localized:
       enable_creation_date: true
+  - redirects:
+      redirect_maps:
+        'getting_started.md': 'link-upgrades.md'
+        'advanced_usage.md': 'link-upgrades.md'
+        'develop.md': 'dub-guide/contributing.md'
+        'package-suppliers.md': 'dub-reference/suppliers.md'
+        'publish.md': 'dub-guide/publishing.md'
+        'settings.md': 'dub-reference/settings.md'
+        'commandline.md': 'cli-reference/dub.md'
+        'package-format-json.md': 'package-format-upgrades.md'
+        'package-format-sdl.md': 'package-format-upgrades.md'
 
 markdown_extensions:
   - admonition

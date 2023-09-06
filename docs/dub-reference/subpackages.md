@@ -6,4 +6,7 @@
 
     Tracking issue: <https://github.com/WebFreak001/dub-docs-v2/issues/20>
 
-Upstream documentation: <https://dub.pm/advanced_usage>
+For adding sub-packages from the registry as a dependency, execute `dub add <packagename>:<subpackage>`
+
+If you need to compile a sub-package only, use `dub build :<subpackage>`
+

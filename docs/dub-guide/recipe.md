@@ -47,9 +47,6 @@ In all documents in the documentation you can switch between dub.json and dub.sd
 
 Please keep the description concise (not more than 100 characters) and avoid including unspecific information such as the fact that the package is written in D. The same goes for the package name - since all DUB packages are written in D, it's usually better to avoid mentioning D explicitly, unless the package is for example a high-level wrapper around a C/C++ library.
 
-!!! hint "Just an excerpt"
-    These are just the boiled down documentation of the available fields, refer to the [recipe](../dub-reference/recipe.md) page in the DUB reference for details to any given field.
-
 ## Package settings
 
 Package settings (top-level settings) such as name, description, homepage,
@@ -97,6 +94,9 @@ Platform specific settings are supported through the use of field name suffixes.
 See also: [Platform specifications](../dub-reference/platform_specifications.md)
 
 ## Build settings
+
+!!! hint "Just an excerpt"
+    These are just the boiled down documentation of the available fields, refer to the [recipe](../dub-reference/recipe.md) page in the DUB reference for details to any given field.
 
 Build settings influence the command line options passed to the compiler and linker. All settings are optional.
 
