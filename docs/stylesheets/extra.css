@@ -54,7 +54,8 @@ want the standard DUB fill color for big areas)
     padding: 0;
 }
 
-.md-header__button.md-logo :is(img, svg) {
+.md-header__button.md-logo :is(img, svg),
+.md-header__button.md-logo :-webkit-any(img,svg) {
     height: 40px;
     width: initial;
 }
