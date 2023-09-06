@@ -11,4 +11,12 @@ The [CLI](cli-reference/dub.md) can be used to
 
 To see how to obtain dub, **go to the next page by pressing the button below**.
 
+<!-- old docs anchors for index page, all link to first steps -->
+<a id="own-projects"></a>
+<a id="adding-deps"></a>
+<a id="foreign-projects"></a>
+<a id="advanced-usage"></a>
+
+## Starting a new project
+
 You can also skip ahead to [First steps](getting-started/first-steps.md) if you already have dub installed.
