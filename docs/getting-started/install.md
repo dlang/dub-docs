@@ -10,6 +10,10 @@ Once you have a D compiler installed, open the terminal and try running `dub --v
 
 DUB can be installed separately from the compiler, for example this may be necessary when a package manager is used to install just the compiler or when DUB needs to be updated separately from the compiler to make use of new features.
 
+!!! tip
+
+    Since DUB is **bundled with the compiler**, you are unlikely to need to install it manually. However for Linux distros you may need to install it separately, which is described below.
+
 ### Pre-compiled packages
 
 Pre-compiled DUB binaries are available for x86 (32 and 64 bit) machines for Linux, OSX and Windows on the [GitHub DUB releases](https://github.com/dlang/dub/releases). Extract the archive anywhere on your system and make sure the DUB executable is in your path.
