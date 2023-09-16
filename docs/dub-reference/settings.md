@@ -4,7 +4,7 @@
 
     The content on this page is not yet fully finished.
 
-    Tracking issue: <https://github.com/WebFreak001/dub-docs-v2/issues/19>
+    Tracking issue: <https://github.com/dlang/dub-docs/issues/70>
 
 User/System-wide default settings can be specified in the DUB settings file. The DUB settings file is a JSON configuration file containing various default values that are otherwise hard-coded. Most settings can be overridden by their corresponding [command line switches](../cli-reference/dub.md).
 

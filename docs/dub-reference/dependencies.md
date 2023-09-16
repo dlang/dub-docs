@@ -4,7 +4,7 @@
 
     The content on this page is not yet fully finished.
 
-    Tracking issue: <https://github.com/WebFreak001/dub-docs-v2/issues/12>
+    Tracking issue: <https://github.com/dlang/dub-docs/issues/64>
 
 !!! tip "Recipe details"
 
@@ -68,7 +68,7 @@ CLI docs: [`dub add-local`](../cli-reference/dub-add-local.md)
 
     The content on this section is not yet fully finished.
 
-    Tracking issue: <https://github.com/WebFreak001/dub-docs-v2/issues/2>
+    Tracking issue: <https://github.com/dlang/dub-docs/issues/55>
 
 Projects can have additional special dependencies for specific configurations.
 

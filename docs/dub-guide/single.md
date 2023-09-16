@@ -1,11 +1,5 @@
 # Single-file packages
 
-!!! note "Work-in-Progress Documentation"
-
-    The content on this page is not yet fully finished.
-
-    Tracking issue: <https://github.com/WebFreak001/dub-docs-v2/issues/7>
-
 For small or script-like applications, DUB supports a special mode where the whole package is contained in a single .d file. The package recipe description can be embedded into code comments within the file:
 
 === "hello.d"
