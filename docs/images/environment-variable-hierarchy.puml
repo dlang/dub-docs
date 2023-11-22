@@ -1,0 +1,36 @@
+@startuml environment-variable-hierarchy
+
+([package] environments) --> ([dependency] environments) : overrides
+([dependency] environments) --> ([settings] defaultEnvironments) : overrides
+
+
+package "pre/postXXXCommands" {
+    package "pre/postBuildCommands" {
+        package "`$ dub build` compiler variables" {
+            (buildEnvironments)
+        }
+        (preBuildEnvironments) --> (buildEnvironments)
+        (postBuildEnvironments) --> (buildEnvironments)
+    }
+
+    package "pre/postGenerateCommands" {
+        (preGenerateEnvironments)
+        (postGenerateEnvironments)
+    }
+
+    (preGenerateEnvironments) ---> (environments)
+    (postGenerateEnvironments) ---> (environments)
+
+    package "pre/postRunCommands" {
+        package "`$ dub run` program variables" {
+            (runEnvironments)
+        }
+        (preRunEnvironments) --> (runEnvironments)
+        (postRunEnvironments) --> (runEnvironments)
+    }
+
+    (buildEnvironments) -> (environments)
+    (runEnvironments) -> (environments)
+}
+
+@enduml

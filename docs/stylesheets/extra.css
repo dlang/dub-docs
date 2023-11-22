@@ -1,0 +1,248 @@
+:root, [data-md-color-scheme="default"] {
+    --dub-fill-red: #B03931;
+
+    --md-primary-fg-color: #B03931;
+    --md-primary-fg-color--light: #B03931;
+    --md-primary-fg-color--dark: #98312A;
+    --md-accent-fg-color: #742620;
+
+    --md-default-fg-color: rgba(0, 0, 0, 0.93);
+    --md-default-fg-color--light: rgba(0, 0, 0, 0.8);
+    --md-default-fg-color--lighter: rgba(0, 0, 0, 0.12);
+    --md-default-fg-color--lightest: rgba(0, 0, 0, 0.07);
+}
+
+[data-md-color-scheme="default"] {
+    --md-code-hl-comment-color: var(--dub-fill-red);
+}
+
+/* consistency with other DUB pages */
+
+html {
+    font-size: 18.75px;
+}
+
+.md-content a {
+    text-decoration: underline;
+}
+
+/*
+fix dark theme red filling (because font color is lighter there, but we still
+want the standard DUB fill color for big areas)
+*/
+
+.md-header, .md-nav--primary .md-nav__title[for="__drawer"],
+[data-md-color-scheme="slate"] .md-top {
+    background-color: var(--dub-fill-red);
+}
+
+.md-tabs {
+    background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #EA382C;
+    --md-primary-fg-color--light: #EA382C;
+    --md-primary-fg-color--dark: #B03931;
+    --md-accent-fg-color: #ff4633;
+    --md-default-fg-color: #f2f2f2;
+    --md-default-fg-color--light: rgba(242, 242, 242, 0.62);
+    --md-default-fg-color--lighter: rgba(242, 242, 242, 0.32);
+    --md-default-fg-color--lightest: rgba(242, 242, 242, 0.12);
+}
+
+/* full logo size */
+
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0;
+}
+
+.md-header__button.md-logo :is(img, svg),
+.md-header__button.md-logo :-webkit-any(img,svg) {
+    height: 40px;
+    width: initial;
+}
+
+/* ridge style header border */
+
+.md-header .md-tabs {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -1px 0 #943029;
+}
+
+/* make menu links colored the same as hover */
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link:is(:focus, :hover) {
+    color: var(--md-typeset-a-color);
+}
+
+/* embedded man pages definition list */
+
+.md-typeset dd {
+    margin-top: 0;
+}
+
+/* prevent line breaks inside code blocks */
+
+code {
+    white-space: nowrap;
+}
+
+pre code {
+    white-space: pre;
+}
+
+/* make search input field white on light theme (instead of dark red) */
+
+body:not([data-md-color-scheme="slate"]) .md-search__form {
+    background-color: white;
+}
+
+body:not([data-md-color-scheme="slate"]) .md-search__form:hover {
+    background-color: #ebebeb;
+}
+
+body:not([data-md-color-scheme="slate"]) .md-search {
+    color: var(--md-default-fg-color);
+}
+
+body:not([data-md-color-scheme="slate"]) .md-search__input::placeholder {
+    color: var(--md-default-fg-color);
+}
+
+.md-search__input+.md-search__icon {
+    color: inherit;
+}
+
+/* embedded terminal outputs */
+
+.col_transparent {
+    opacity: 0.5;
+}
+
+.col_lg {
+    color: #40af00;
+}
+
+.col_dg {
+    color: #006300;
+}
+
+.col_lp {
+    color: #df34df;
+}
+
+.col_dp {
+    color: purple;
+}
+
+.col_lb {
+    color: #427eff;
+}
+
+.col_db {
+    color: #3e17e9;
+}
+
+[data-md-color-scheme="slate"] .col_lg {
+    color: #5df93c;
+}
+
+[data-md-color-scheme="slate"] .col_dg {
+    color: #00ca16;
+}
+
+[data-md-color-scheme="slate"] .col_lp {
+    color: #eb8aff;
+}
+
+[data-md-color-scheme="slate"] .col_dp {
+    color: #bc5aff;
+}
+
+[data-md-color-scheme="slate"] .col_lb {
+    color: #44daff;
+}
+
+[data-md-color-scheme="slate"] .col_db {
+    color: #5580ff;
+}
+
+:root {
+    --md-admonition-icon--cli: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13,19V16H21V19H13M8.5,13L2.47,7H6.71L11.67,11.95C12.25,12.54 12.25,13.5 11.67,14.07L6.74,19H2.5L8.5,13Z"/></svg>')
+}
+
+.md-typeset .admonition.cli,
+.md-typeset .admonition.cli .admonition-title,
+.md-typeset details.cli {
+    border-color: #333333;
+}
+
+.md-typeset .cli>.admonition-title {
+    font-weight: normal;
+    font-feature-settings: "kern";
+    font-family: var(--md-code-font-family);
+}
+
+.md-typeset .cli>.admonition-title,
+.md-typeset .cli>summary {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset .cli>.admonition-title::before,
+.md-typeset .cli>summary::before {
+    background-color: #333333;
+    -webkit-mask-image: var(--md-admonition-icon--cli);
+    mask-image: var(--md-admonition-icon--cli);
+}
+
+/* install page OS icons */
+
+div.install {
+    padding-left: 70px;
+    min-height: 70px;
+    background-repeat: no-repeat;
+    background-position: 10px 40px;
+    background-size: 50px auto;
+
+    padding-bottom: 1.4em;
+}
+
+div.install h3 {
+    margin-top: 0;
+}
+
+div.install.os-arch {
+    background-image: url(../images/product/archlinux_logo.png);
+}
+
+div.install.os-gentoo {
+    background-image: url(../images/product/gentoo_logo.png);
+}
+
+div.install.os-homebrew {
+    background-image: url(../images/product/homebrew_logo.png);
+}
+
+div.install.os-nix {
+    background-image: url(../images/product/nix_logo.png);
+}
+
+div.install.os-ubuntu {
+    background-size: 36px auto;
+    background-image: url(../images/product/ubuntu_logo.png), url(../images/product/debian_logo.png);
+    background-position: 10px calc(50% - 24px), 10px calc(50% + 24px);
+}
+
+div.install.os-opensuse {
+    background-image: url(../images/product/opensuse_logo.png);
+}
+
+div.install.os-snap {
+    background-image: url(../images/product/snapcraft_logo.png);
+}
+
+div.install.os-openbsd {
+    background-image: url(../images/product/openbsd_logo.png);
+}

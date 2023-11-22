@@ -1,0 +1,136 @@
+site_name: DUB Documentation
+
+repo_url: https://github.com/dlang/dub-docs
+
+theme:
+  name: material
+  custom_dir: overrides
+  font:
+    text: "Roboto Slab"
+  logo: /images/dub-header.png
+  favicon: /favicon.ico
+  features:
+    - search.suggest
+    - search.share
+    - content.tabs.link
+    - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+  palette:
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+
+extra:
+  homepage: https://code.dlang.org
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - redirects:
+      redirect_maps:
+        'getting_started.md': 'link-upgrades.md'
+        'advanced_usage.md': 'link-upgrades.md'
+        'develop.md': 'dub-guide/contributing.md'
+        'package-suppliers.md': 'dub-reference/suppliers.md'
+        'publish.md': 'dub-guide/publishing.md'
+        'settings.md': 'dub-reference/settings.md'
+        'commandline.md': 'cli-reference/dub.md'
+        'package-format-json.md': 'package-format-upgrades.md'
+        'package-format-sdl.md': 'package-format-upgrades.md'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      extend_pygments_lang:
+      - {"name": "sdl", "lang": "scilab"}
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.extra
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - "Getting Started":
+    - "Intro to DUB": index.md
+    - getting-started/install.md
+    - getting-started/first-steps.md
+  - "DUB Guide":
+    - dub-guide/recipe.md
+    - dub-guide/building.md
+    - dub-guide/tests.md
+    - dub-guide/single.md
+    - dub-guide/selections.md
+    - dub-guide/registry.md
+    - dub-guide/publishing.md
+    - dub-guide/plugins_dlls.md
+    - dub-guide/contributing.md
+  - "DUB Reference":
+    - dub-reference/recipe.md
+    - dub-reference/package_settings.md
+    - dub-reference/build_settings.md
+    - dub-reference/buildtypes.md
+    - dub-reference/configurations.md
+    - dub-reference/defaults.md
+    - dub-reference/dub_home.md
+    - dub-reference/dependencies.md
+    - dub-reference/environment_variables.md
+    - dub-reference/hooks.md
+    - dub-reference/output_target.md
+    - dub-reference/platform_specifications.md
+    - dub-reference/registries.md
+    - dub-reference/settings.md
+    - dub-reference/suppliers.md
+    - dub-reference/subpackages.md
+    - dub-reference/target_types.md
+  - "CLI Reference":
+    - "General Commands":
+      - "dub": cli-reference/dub.md
+    - "Package Creation":
+      - "dub init": cli-reference/dub-init.md
+    - "Build, Test and Run":
+      - "dub build": cli-reference/dub-build.md
+      - "dub clean": cli-reference/dub-clean.md
+      - "dub describe": cli-reference/dub-describe.md
+      - "dub dustmite": cli-reference/dub-dustmite.md
+      - "dub generate": cli-reference/dub-generate.md
+      - "dub lint": cli-reference/dub-lint.md
+      - "dub run": cli-reference/dub-run.md
+      - "dub test": cli-reference/dub-test.md
+    - "Package Management":
+      - "dub fetch": cli-reference/dub-fetch.md
+      - "dub add": cli-reference/dub-add.md
+      - "dub remove": cli-reference/dub-remove.md
+      - "dub upgrade": cli-reference/dub-upgrade.md
+      - "dub add-path": cli-reference/dub-add-path.md
+      - "dub remove-path": cli-reference/dub-remove-path.md
+      - "dub add-local": cli-reference/dub-add-local.md
+      - "dub remove-local": cli-reference/dub-remove-local.md
+      - "dub list": cli-reference/dub-list.md
+      - "dub search": cli-reference/dub-search.md
+      - "dub add-override": cli-reference/dub-add-override.md
+      - "dub remove-override": cli-reference/dub-remove-override.md
+      - "dub list-overrides": cli-reference/dub-list-overrides.md
+      - "dub clean-caches": cli-reference/dub-clean-caches.md
+      - "dub convert": cli-reference/dub-convert.md
+  - glossary.md

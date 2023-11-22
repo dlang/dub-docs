@@ -1,7 +1,2 @@
-/.project
-/.dub
-/__test__library__
-/dub-docs
-*.exe
-log.txt
-settings.json
+site/
+docs/cli-reference/
