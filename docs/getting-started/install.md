@@ -14,10 +14,6 @@ DUB can be installed separately from the compiler, for example this may be neces
 
     Since DUB is **bundled with the compiler**, you are unlikely to need to install it manually. However for Linux distros you may need to install it separately, which is described below.
 
-### Pre-compiled packages
-
-Pre-compiled DUB binaries are available for x86 (32 and 64 bit) machines for Linux, OSX and Windows on the [GitHub DUB releases](https://github.com/dlang/dub/releases). Extract the archive anywhere on your system and make sure the DUB executable is in your path.
-
 ### From source
 
 First clone the [dub repository](https://github.com/dlang/dub) from git:
