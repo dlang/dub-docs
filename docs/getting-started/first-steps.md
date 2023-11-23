@@ -92,3 +92,22 @@ To get the package, run [`dub fetch <package name>`](../cli-reference/dub-fetch.
 ## Publishing packages
 
 To publish your own packages, just create a new package with a valid package recipe like above (see the [package recipe specification](../dub-reference/recipe.md)) and follow the instructions on the [publishing packages](../dub-guide/publishing.md) page.
+
+---
+
+!!! success "Summary"
+
+    These are the most commonly used commands you will use with DUB:
+
+    ```sh
+    # builds the project in the current folder
+    $ dub build
+
+    # builds & runs the project in the current folder
+    $ dub run
+    # or shorthand equivalent:
+    $ dub
+
+    # asks to download "someapp" from the registry and runs it
+    $ dub run someapp
+    ```
