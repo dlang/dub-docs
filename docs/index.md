@@ -9,7 +9,8 @@ The [CLI](cli-reference/dub.md) can be used to
 - compile projects and external programs ([dub build](cli-reference/dub-build.md), [dub run](cli-reference/dub-run.md))
 - test projects ([dub test](cli-reference/dub-test.md))
 
-To see how to obtain dub, **go to the next page by pressing the button below**.
+DUB is bundled with most D compilers' distributions. However, it's also possible to install it separately.
+See [Installing DUB](getting-started/install.md) for details.
 
 <!-- old docs anchors for index page, all link to first steps -->
 <a id="own-projects"></a>
@@ -17,6 +18,71 @@ To see how to obtain dub, **go to the next page by pressing the button below**.
 <a id="foreign-projects"></a>
 <a id="advanced-usage"></a>
 
-## Starting a new project
+## DUB Basics
 
-You can also skip ahead to [First steps](getting-started/first-steps.md) if you already have dub installed.
+DUB is a build tool similar to other modern languages build tools like Javascript's [npm](https://www.npmjs.com/)
+and Rust's [cargo](https://crates.io/).
+
+A file called `dub.sdl` (or `dub.json`) is used to configure a DUB project.
+
+> [SDL](https://sdlang.org/) is a "Simple Declarative Language" inspired by D's syntax.
+> Whether to use SDL or JSON for the DUB file is a [matter of taste](https://forum.dlang.org/thread/fehzcwpabruiyhpwiywj@forum.dlang.org).
+
+A DUB file may look like this:
+
+```sdl
+name "myproject"
+description "A minimal D application."
+authors "My Name"
+copyright "Copyright © 2024, My Name"
+license "Boost"
+
+dependency "libasync" version="~>0.9.5"
+
+configuration "library" {
+    targetPath "target/lib"
+}
+
+configuration "unittest" {
+    dependency "tested" version="~>0.9.5"
+	dependency "dshould" version="~>1.7.1"
+    targetPath "target/test"
+}
+```
+
+[DUB Configurations](dub-reference/configurations.md) are used to create different variations of a project.
+
+In the above example, all configurations include a dependency on `libasync` because that's declared at the top-level,
+but only the `unittest` configuration includes the dependencies `tested` and `dshould`.
+
+When running `dub test`, all [Unit Tests](https://tour.dlang.org/tour/en/gems/unittesting) found in
+[sourcePaths](dub-reference/build_settings.md#sourcepaths) are executed using the `unittest` configuration by default.
+
+To specify a configuration explicitly when building, use the `--config` option:
+
+```
+dub build --config=library
+```
+
+DUB also uses the concept of [build types](dub-reference/buildtypes.md) to define what to build. Many build types are
+pre-defined, but the most common ones are `debug` and `release`.
+
+Hence, to build the release version of a library, the following command could be used:
+
+```
+dub build --config=library --build=release
+```
+
+Finally, to run the application, use `dub run`.
+
+Check [Building](dub-guide/building.md) for more details.
+
+## Next Steps
+
+[First Steps](getting-started/first-steps.md) completes this overview of the basic DUB workflow.
+
+The [DUB Guide](dub-guide/recipe.md) goes into more details about building, testing, configuring dependencies and registries,
+shared libraries, publishing packages and more.
+
+More experienced users can use the [DUB Reference](dub-reference/recipe.md) and [CLI Reference](cli-reference/dub/)
+for a comprehensive list of the available options.
