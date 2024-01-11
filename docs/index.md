@@ -23,12 +23,14 @@ See [Installing DUB](getting-started/install.md) for details.
 DUB is a build tool similar to other modern languages build tools like Javascript's [npm](https://www.npmjs.com/)
 and Rust's [cargo](https://crates.io/).
 
-A file called `dub.sdl` (or `dub.json`) is used to configure a DUB project.
+A [recipe file](dub-guide/recipe.md) called `dub.sdl` (or `dub.json`) is used to configure a DUB project.
 
-> [SDL](https://sdlang.org/) is a "Simple Declarative Language" inspired by D's syntax.
+> [SDL](https://sdlang.org/) is a "Simple Declarative Language" that uses a familiar C syntax.
 > Whether to use SDL or JSON for the DUB file is a [matter of taste](https://forum.dlang.org/thread/fehzcwpabruiyhpwiywj@forum.dlang.org).
 
-A DUB file may look like this:
+User/System-wide default settings can be specified in a [settings file](dub-reference/settings.md).
+
+A recipe file may look like this:
 
 ```sdl
 name "myproject"
@@ -45,7 +47,7 @@ configuration "library" {
 
 configuration "unittest" {
     dependency "tested" version="~>0.9.5"
-	dependency "dshould" version="~>1.7.1"
+    dependency "dshould" version="~>1.7.1"
     targetPath "target/test"
 }
 ```
@@ -54,6 +56,13 @@ configuration "unittest" {
 
 In the above example, all configurations include a dependency on `libasync` because that's declared at the top-level,
 but only the `unittest` configuration includes the dependencies `tested` and `dshould`.
+
+To build a project, run [`dub build`](cli-reference/dub-build/) (or just `dub`).
+
+As a project is built, DUB automatically resolves, downloads and builds its dependencies as needed.
+
+The resolved dependency versions are stored in a file next to the recipe file, called [dub.selections.json](dub-guide/selections.md),
+which is similar to a lock file.
 
 When running `dub test`, all [Unit Tests](https://tour.dlang.org/tour/en/gems/unittesting) found in
 [sourcePaths](dub-reference/build_settings.md#sourcepaths) are executed using the `unittest` configuration by default.
