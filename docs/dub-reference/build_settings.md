@@ -692,7 +692,7 @@ This corresponds to adding `-I` flags in DMD.
 
     ```sdl
     ...
-    importPaths "views"
+    stringImportPaths "views"
     ```
 
     Arguments: `"<path1>" ["path2" [...]]`
@@ -701,7 +701,7 @@ This corresponds to adding `-I` flags in DMD.
 
     ```json
     ...
-    "importPaths": ["views"]
+    "stringImportPaths": ["views"]
     ```
 
     Type: `string[]`
