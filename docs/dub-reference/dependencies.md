@@ -53,9 +53,18 @@ Inside sub-packages you can refer to the parent package using `path=".."` (or el
 ## `dub.selections.json`
 ## `dub add-path`
 
+This command provides the basis for a Git based development workflow across a set of multiple interdependent packages. Any directory that gets added using `dub add-path` will get searched for sub folders containing DUB packages whenever dependencies are resolved. During the build, any such package will have precedence over packages that have been fetched by DUB automatically, provided that its version matches the selected version for the project. In particular, a version, such as "1.0.0+commit.9.a25f316" (9 commits ahead of 1.0.0) will match "1.0.0".
+
+This approach allows to check out working copies of packages that are relevant to a project and have any changes, including new commits, be picked up in the build, without having to publish new version tags or having to modify packages recipes or selections to manually point to the path of the working copy.
+
+
+`dub add-local` is a more selective version of this command and ca be used to register individual package folders.
+
 CLI docs: [`dub add-path`](../cli-reference/dub-add-path.md)
 
 ## `dub add-local`
+
+Adds a directory to be searched for a valid DUB package recipe when collecting dependencies during a build. The version of the package will be inferred by the latest Git tag, in case the directory is a Git working copy. This is a more selective version of the `dub add-path` command and only registers a single package directory instead of a whole package directory search path.
 
 CLI docs: [`dub add-local`](../cli-reference/dub-add-local.md)
 
