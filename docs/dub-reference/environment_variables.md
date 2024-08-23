@@ -28,11 +28,12 @@
 
 set by dub in commands:
 
-- `PACKAGE_DIR` - Path to the package itself
+- `PACKAGE_DIR` - Path to the package itself (Only available inside the recipe file)
 - `ROOT_PACKAGE_DIR` - Path to the root package of the build dependency tree
 - `<PKG>_PACKAGE_DIR` - Path to a specific package that is part of the package's dependency graph. $<name> must be in uppercase letters without the semver string.
 - `DUB` - Path to the DUB executable
 - `DUB_PACKAGE` - Name of the package
+- `DUB_PACKAGE_DIR` - Path to the package itself - Available in both package and program
 - `DUB_PACKAGE_VERSION` - Version of the package
 - `DUB_ROOT_PACKAGE` - Name of the root package that is being built
 - `DUB_ROOT_PACKAGE_TARGET_TYPE` - Contents of the "targetType" field of the root package as defined by the package recipe
