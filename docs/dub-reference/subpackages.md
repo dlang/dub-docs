@@ -9,27 +9,30 @@
 ## Introduction
 
 DUB has support for sub-packages. They can be used to separate code from
-your root package into dedicated, smaller packages.
+your root package into reusable, smaller components as dedicated packages.
 
-Sub-packages can be used individually within the same project, rather than
-needing to maintain and publish multiple packages on a registry.
+Sub-packages can be declared individually within the same project,
+rather than needing to maintain and publish multiple packages on a registry.
 All sub-packages share the same versioning as the root package, acting
 like regular individual packages on their own.
 
-For example, using sub-packages to separate client and server code is
-generally a good idea, as it allows separate package settings, such as
-dedicated build types and configurations (as specific tweaks).
+For example, it is generally a good idea to use sub-packages to separate
+client and server code, or into different components
+(e.g., a specific protocol like `vibe-d:http`, etc.).
+
+Since sub-packages act just like a regular package, they can have separate
+package settings, like dedicated compiler setting, build types, and configurations.
 
 !!! note
 
-    Sub-packages can not be easily found in registries, as they are
-    expected to only be used within your project.
+    Currently, sub-packages are not expected to be discovered by searches
+    made in the main DUB registry.
 
 ## Usage
 
 The syntax used to reference sub-packages in commands is often `<package>:<sub-package>` or just `:<sub-package>`.
 
-- To only add this sub-package from a package as a dependency, execute `dub add <packagename>:<sub-package>`
+- To only add a specific sub-package from a package as a dependency, execute `dub add <packagename>:<sub-package>`
 - To build a sub-package, execute `dub build :<sub-package>`
 - To build and run a sub-package, execute `dub run :<sub-package>`
 - To test a sub-package, execute `dub test :<sub-package>`
@@ -41,7 +44,7 @@ Because sub-packages act as any other package, the default `targetType` is `auto
 When a sub-package is built, additional "Have" versions are defined.
 For example, with a root package named `package` with a `mylibrary` sub-package,
 a `Have_package_mylibrary` version will be automatically defined by DUB,
-and will be visible for all packages.
+and will be visible for when the sub-package is used as dependency.
 
 ## Declaration
 
@@ -74,20 +77,17 @@ To be useful, a sub-package needs, at minimum, a name.
 
 ## Example
 
-This minimal working example assumes this file structure:
+This example features a main application with a sub-package library used as a dependency.
+
+It assumes this file structure:
 
 - `dub.sdl` (or `dub.json`): Main recipe.
-- `source/` folder with:
+- `source/` folder with (main package):
     - `app.d`: Main source. Needs to import our sub-package library as `import mylibrary;`.
-- `mylibrary/` folder with:
+- `mylibrary/` folder with (sub-package):
     - `dub.sdl` (or `dub.json`): Library recipe.
     - `source/` folder with:
-        - `example.d`: Library source. Module needs to be declared as `module mylibrary;`.
-
-!!! note
-
-    If you plan to publish your package to the main registry, avoid naming
-    sub-packages "example", as it causes management and discovery issues.
+        - `mylibrary.d`: Library source. Module needs to be declared as `module mylibrary;`.
 
 The main recipe file can reference the sub-package.
 
@@ -126,7 +126,7 @@ but only needs a name to be usable.
     }
     ```
 
-The `mylibrary` sub-package can now be tested with `dub test --root=mylibrary` from the
+The `mylibrary` sub-package can now be tested with `dub test :mylibrary` from the
 main folder directly.
 
 !!! note
