@@ -40,10 +40,32 @@ Because sub-packages act as any other package, the default `targetType` is `auto
 
 ## Declaration
 
-To be useful, a sub-package needs, at minimum, a name.
-
 Sub-packages can be declared entirely within the main recipe, or by a
 reference to a name of a folder containing the sub-package recipe file.
+
+If you have a subcomponent called "mylibrary", it can simply be referenced by name.
+
+To be useful, a sub-package needs, at minimum, a name.
+
+=== dub.sdl
+
+    ```sdl
+    subPackage "mylibrary"
+    ```
+
+=== dub.json
+
+    ```json
+    {
+        "subPackages": [ "mylibrary" ]
+    }
+    ```
+
+!!! note
+
+    While the root recipe can contain sub-package configurations, it is
+    preferenced to leave configurations in the sub-package recipe file,
+    for ease of management.
 
 ## Example
 
@@ -51,11 +73,11 @@ This minimal working example assumes this file structure:
 
 - `dub.sdl` (or `dub.json`): Main recipe.
 - `source/` folder with:
-  - `app.d`: Main source. Needs to import our sub-package library as `import mylibrary;`.
+    - `app.d`: Main source. Needs to import our sub-package library as `import mylibrary;`.
 - `mylibrary/` folder with:
-  - `dub.sdl` (or `dub.json`): Library recipe.
-  - `source/` folder with:
-    - `example.d`: Library source. Module needs to be declared as `module mylibrary;`.
+    - `dub.sdl` (or `dub.json`): Library recipe.
+    - `source/` folder with:
+        - `example.d`: Library source. Module needs to be declared as `module mylibrary;`.
 
 !!! note
 
@@ -104,4 +126,5 @@ main folder directly.
 
 !!! note
 
-    This makes DUB compile test binaries in the `mylibrary/` folder.
+    This makes DUB compile test binaries in the `mylibrary/` folder, since
+    sub-packages are packages on their own.
