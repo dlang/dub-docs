@@ -31,7 +31,8 @@ The syntax used to reference sub-packages in commands is often `<package>:<sub-p
 
 When the package name is omitted, the current working package name is assumed.
 
-The default `targetType` for sub-packages is `library`.
+The default `targetType` for sub-packages is `autodetect`. If the sub-package
+contains a main function signature
 
 ## Declaration
 
@@ -45,11 +46,12 @@ reference to a name of a folder containing the sub-package recipe file.
 
 This minimal working example assumes this file structure:
 - `dub.sdl` (or `dub.json`): Main recipe.
-- `source/` folder with the following:
-  - `app.d`: Main source. Needs to import our sub-package library as `import example.example;`.
-- `example/` folder with the following:
+- `source/` folder with:
+  - `app.d`: Main source. Needs to import our sub-package library as `import mylibrary;`.
+- `mylibrary/` folder with:
   - `dub.sdl` (or `dub.json`): Library recipe.
-  - `example.d`: Library source. Module needs to be declared as `module example.example;`.
+  - `source/` folder with:
+    - `example.d`: Library source. Module needs to be declared as `module mylibrary;`.
 
 The main recipe file can reference the sub-package.
 
@@ -57,8 +59,8 @@ The main recipe file can reference the sub-package.
 
     ```sdl
     name "dubtest"
-    dependency ":example" version="*"
-    subPackage "example"
+    dependency ":mylibrary" version="*"
+    subPackage "mylibrary"
     ```
 
 === "dub.json"
@@ -66,8 +68,8 @@ The main recipe file can reference the sub-package.
     ```json
     {
         "name": "dubtest",
-        "dependencies": { ":example": "*" },
-        "subPackages": [ "example" ]
+        "dependencies": { ":mylibrary": "*" },
+        "subPackages": [ "mylibrary" ]
     }
     ```
 
@@ -77,17 +79,13 @@ The sub-package recipe file contains sources and additional configuration.
 
     ```sdl
     name "mylibrary"
-    sourcePaths "."
-    importPaths "."
     ```
 
 === "mylibrary/dub.json"
 
     ```json
     {
-        "name": "mylibrary",
-        "importPaths": [ "." ],
-        "sourcePaths": [ "." ]
+        "name": "mylibrary"
     }
     ```
 
