@@ -20,9 +20,15 @@ For example, using sub-packages to separate client and server code is
 generally a good idea, as it allows separate package settings, such as
 dedicated build types and configurations (as specific tweaks).
 
+!!! note
+
+    Sub-packages can not be easily found in registries, as they are
+    expected to only be used within your project.
+
 ## Usage
 
-The syntax used to reference sub-packages in commands is often `<package>:<sub-package>` or just `:<sub-package>`:
+The syntax used to reference sub-packages in commands is often `<package>:<sub-package>` or just `:<sub-package>`.
+
 - To only add this sub-package from a package as a dependency, execute `dub add <packagename>:<sub-package>`
 - To build a sub-package, execute `dub build :<sub-package>`
 - To build and run a sub-package, execute `dub run :<sub-package>`
@@ -42,6 +48,7 @@ reference to a name of a folder containing the sub-package recipe file.
 ## Example
 
 This minimal working example assumes this file structure:
+
 - `dub.sdl` (or `dub.json`): Main recipe.
 - `source/` folder with:
   - `app.d`: Main source. Needs to import our sub-package library as `import mylibrary;`.
@@ -49,6 +56,11 @@ This minimal working example assumes this file structure:
   - `dub.sdl` (or `dub.json`): Library recipe.
   - `source/` folder with:
     - `example.d`: Library source. Module needs to be declared as `module mylibrary;`.
+
+!!! note
+
+    If you plan to publish your package to the main registry, avoid naming
+    sub-packages "example", as it causes management and discovery issues.
 
 The main recipe file can reference the sub-package.
 
