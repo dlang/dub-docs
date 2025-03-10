@@ -38,6 +38,11 @@ When the package name is omitted, the current working package name is assumed (e
 
 Because sub-packages act as any other package, the default `targetType` is `autodetect`.
 
+When a sub-package is built, additional "Have" versions are defined.
+For example, with a root package named `package` with a `mylibrary` sub-package,
+a `Have_package_mylibrary` version will be automatically defined by DUB,
+and will be visible for all packages.
+
 ## Declaration
 
 Sub-packages can be declared entirely within the main recipe, or by a
@@ -47,13 +52,13 @@ If you have a subcomponent called "mylibrary", it can simply be referenced by na
 
 To be useful, a sub-package needs, at minimum, a name.
 
-=== dub.sdl
+=== "dub.sdl"
 
     ```sdl
     subPackage "mylibrary"
     ```
 
-=== dub.json
+=== "dub.json"
 
     ```json
     {
