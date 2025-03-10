@@ -66,30 +66,34 @@ The main recipe file can reference the sub-package.
     ```json
     {
         "name": "dubtest",
-        "dependencies": { ":example": ">=0.0.0" },
+        "dependencies": { ":example": "*" },
         "subPackages": [ "example" ]
     }
     ```
 
 The sub-package recipe file contains sources and additional configuration.
 
-=== "example/dub.sdl"
+=== "mylibrary/dub.sdl"
 
-    name "example"
+    ```sdl
+    name "mylibrary"
     sourcePaths "."
     importPaths "."
+    ```
 
-=== "example/dub.json"
+=== "mylibrary/dub.json"
 
+    ```json
     {
-        "name": "example",
+        "name": "mylibrary",
         "importPaths": [ "." ],
         "sourcePaths": [ "." ]
     }
+    ```
 
-The `example` sub-package can now be tested with `dub test :example` from the
+The `mylibrary` sub-package can now be tested with `dub test --root=mylibrary` from the
 main folder directly.
 
 !!! note
 
-    This example makes DUB compile test binaries into the `example/` folder.
+    This makes DUB compile test binaries in the `mylibrary/` folder.
