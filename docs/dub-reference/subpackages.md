@@ -8,18 +8,17 @@
 
 ## Introduction
 
-DUB has support for sub-packages, a mechanic used to define additional optional
-recipes within the main recipe file. They can be built and tested separately.
+DUB has support for sub-packages. They can be used to separate code from
+your root package into dedicated, smaller packages.
 
-The main distinction to configurations is the intent of use. For example,
-while configurations are typically used to separate server and client code,
-sub-packages can be used to create and manage dependencies used by
-these server and client example configurations.
+Sub-packages can be used individually within the same project, rather than
+needing to maintain and publish multiple packages on a registry.
+All sub-packages share the same versioning as the root package, acting
+like regular individual packages on their own.
 
-Another distinction with configurations, if at least one configuration is defined,
-the first configuration is taken as default. This does not happen with sub-packages.
-
-Each sub-package can have its own set of configurations and build options.
+For example, using sub-packages to separate client and server code is
+generally a good idea, as it allows separate package settings, such as
+dedicated build types and configurations (as specific tweaks).
 
 ## Usage
 
@@ -29,15 +28,13 @@ The syntax used to reference sub-packages in commands is often `<package>:<sub-p
 - To build and run a sub-package, execute `dub run :<sub-package>`
 - To test a sub-package, execute `dub test :<sub-package>`
 
-When the package name is omitted, the current working package name is assumed.
+When the package name is omitted, the current working package name is assumed (e.g., `<package>`).
 
-The default `targetType` for sub-packages is `autodetect`. If the sub-package
-contains a main function signature
+Because sub-packages act as any other package, the default `targetType` is `autodetect`.
 
 ## Declaration
 
-To be useful, a sub-package needs, at minimum, a name, import paths,
-and source paths (or source files).
+To be useful, a sub-package needs, at minimum, a name.
 
 Sub-packages can be declared entirely within the main recipe, or by a
 reference to a name of a folder containing the sub-package recipe file.
@@ -73,7 +70,8 @@ The main recipe file can reference the sub-package.
     }
     ```
 
-The sub-package recipe file contains sources and additional configuration.
+The sub-package recipe file can have its own set of dedicated configurations,
+but only needs a name to be usable.
 
 === "mylibrary/dub.sdl"
 
