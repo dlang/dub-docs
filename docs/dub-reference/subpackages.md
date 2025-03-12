@@ -46,6 +46,11 @@ For example, with a root package named `package` with a `mylibrary` sub-package,
 a `Have_package_mylibrary` version will be automatically defined by DUB,
 and will be visible for when the sub-package is used as dependency.
 
+Specified build types and configurations (e.g., via the command-line
+interface) are applied to the sub-package, and are taken from the sub-package recipe.
+For example, executing `dub build :mylibrary -c experimental`, the `experimental`
+configuration must exist in the sub-package recipe.
+
 ## Declaration
 
 Sub-packages can be declared entirely within the main recipe, or by a
