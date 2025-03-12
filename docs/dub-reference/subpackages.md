@@ -50,6 +50,7 @@ Specified build types and configurations (e.g., via the command-line
 interface) are applied to the sub-package, and are taken from the sub-package recipe.
 For example, executing `dub build :mylibrary -c experimental`, the `experimental`
 configuration must exist in the sub-package recipe.
+If a build type exists in both packages, both will be applied.
 
 ## Declaration
 
