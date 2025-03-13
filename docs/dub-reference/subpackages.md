@@ -48,9 +48,28 @@ and will be visible for when the sub-package is used as dependency.
 
 Specified build types and configurations (e.g., via the command-line
 interface) are applied to the sub-package, and are taken from the sub-package recipe.
-For example, executing `dub build :mylibrary -c experimental`, the `experimental`
-configuration must exist in the sub-package recipe.
 If a build type exists in both packages, both will be applied.
+
+For example, executing `dub build :mylibrary -c experimental`,
+the `experimental` configuration must exist in the sub-package recipe.
+
+Following the same example, configurations can also be referenced via recipes:
+
+=== "dub.sdl"
+
+    ```sdl
+    subConfiguration ":mylibrary" "experimental"
+    ```
+
+=== "dub.json"
+
+    ```json
+    {
+    	"subConfigurations": {
+		    ":mylibrary": "experimental"
+	    }
+    }
+    ```
 
 ## Declaration
 
