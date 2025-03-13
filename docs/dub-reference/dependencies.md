@@ -47,7 +47,39 @@ See [version specifiers](./build_settings.md#version-specifiers).
 Inside sub-packages you can refer to the parent package using `path=".."` (or elsewhere, depending on folder structure), to avoid DUB accidentally looking up a different package location whenever you run DUB from inside the sub-package folder.
 
 ### `repository`
+
+The `repository` parameter can accept a link to a [version control](https://en.wikipedia.org/wiki/Version_control) system.
+
+Repositories dependencies act as a direct supplier for the given dependency.
+
 #### Git repositories
+
+A git repository can be directly used as a dependency.
+
+The `version` parameter can be a **git tag** or a **git commit hash**.
+
+=== "dub.sdl"
+
+    ```sdl
+    dependency "example" repository="git+https://github.com/username/library.git" version="6fd8e2dd19de59755b5531ccd7e481fd1df8967d"
+    ```
+
+=== "dub.json"
+
+    ```json
+    {
+        "dependencies": {
+            "example": {
+                "repository": "git+https://github.com/username/library.git",
+                "version": "6fd8e2dd19de59755b5531ccd7e481fd1df8967d"
+            }
+        }
+    }
+    ```
+
+#### Maven repositories
+
+For more information on Maven dependencies, visit [Suppliers (Maven repository)](./suppliers.md#maven-repository).
 
 ### `dflags`
 ## `dub.selections.json`
