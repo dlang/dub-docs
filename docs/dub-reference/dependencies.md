@@ -115,12 +115,12 @@ Projects can have additional special dependencies for specific configurations.
 
 ```json
 "configurations": [
-	{
-		"name": "myconfig",
-		"dependencies": {
-			"mydep": { "version": "*" }
-		}
-	}
+    {
+        "name": "myconfig",
+        "dependencies": {
+            "mydep": { "version": "*" }
+        }
+    }
 ]
 ```
 
