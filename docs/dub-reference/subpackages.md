@@ -65,9 +65,9 @@ Following the same example, configurations can also be referenced via recipes:
 
     ```json
     {
-    	"subConfigurations": {
-		    ":mylibrary": "experimental"
-	    }
+        "subConfigurations": {
+            ":mylibrary": "experimental"
+        }
     }
     ```
 
