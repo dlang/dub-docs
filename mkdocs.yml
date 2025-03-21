@@ -71,8 +71,8 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - "Intro to DUB": index.md  # Moved to top level
   - "Getting Started":
+    - "Intro to DUB": index.md
     - getting-started/install.md
     - getting-started/first-steps.md
   - "DUB Guide":
