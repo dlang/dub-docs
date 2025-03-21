@@ -47,3 +47,5 @@ When testing a package ([dub-test(1)](../cli-reference/dub-test.md)) the followi
 5. if it exists, the first configuration is picked
 
 If no configuration is found (default on targetType "none"), the test is skipped for the package.
+
+> 📚 **For details on defining configurations, refer to the [Configuration Syntax](../dub-reference/package_settings.md#configurations).**

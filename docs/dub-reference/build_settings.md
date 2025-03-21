@@ -1053,3 +1053,6 @@ Example:
     ```
 
 Injected source files will import files from the context of the project that depends on the dependency defining them.
+
+> 📚 For detailed syntax and examples, refer to the [Package Format Documentation](https://dub.pm/dub-reference/package_settings/#configurations).
+
