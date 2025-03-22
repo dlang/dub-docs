@@ -10,6 +10,7 @@ The [CLI](cli-reference/dub.md) can be used to
 - test projects ([dub test](cli-reference/dub-test.md))
 
 To see how to obtain dub, **go to the next page by pressing the button below**.
+<button id="theme-toggle">Toggle Dark Mode</button>
 
 <!-- old docs anchors for index page, all link to first steps -->
 <a id="own-projects"></a>
@@ -20,3 +21,7 @@ To see how to obtain dub, **go to the next page by pressing the button below**.
 ## Starting a new project
 
 You can also skip ahead to [First steps](getting-started/first-steps.md) if you already have dub installed.
+
+
+<!-- Include the darkmode.js script -->
+<script src="/js/darkmode.js"></script>

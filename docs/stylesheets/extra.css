@@ -202,7 +202,22 @@ body:not([data-md-color-scheme="slate"]) .md-search__input::placeholder {
     mask-image: var(--md-admonition-icon--cli);
 }
 
+
+/* darkmode */
+/* Default (light) theme */
+/* body {
+    background-color: #fff;
+    color: #000;
+} */
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
 /* install page OS icons */
+
 
 div.install {
     padding-left: 70px;
