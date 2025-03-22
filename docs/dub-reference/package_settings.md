@@ -257,11 +257,15 @@ Some example license specifications:
 
     Type: `T[]`
 
+!!! see-also "See also"
+
+    * see [sub-packages](./subpackages.md) for usage and behavior
+
 ## `configurations`
 
 === "dub.sdl"
 
-    Speficies a build configuration (chosen on the command line using `--config=...`) - see the [configurations page](../dub-reference/configurations.md) for more details.
+    Speficies a build configuration (chosen on the command line using `--config=...`)
 
     ```sdl
     ...
@@ -274,7 +278,7 @@ Some example license specifications:
 
 === "dub.json"
 
-    Speficies an optional list of build configurations (chosen on the command line using `--config=...`) - see the [configurations page](../dub-reference/configurations.md) for more details.
+    Speficies an optional list of build configurations (chosen on the command line using `--config=...`)
 
     ```json
     ...
@@ -288,11 +292,15 @@ Some example license specifications:
 
     Type: `T[]`
 
+!!! see-also "See also"
+
+    * see [configurations](./configurations.md) for usage and behavior
+
 ## `buildTypes`
 
 === "dub.sdl"
 
-    Defines an additional custom build type or overrides one of the default ones (chosen on the command line using --build=...) - see the [build types page](../dub-reference/buildtypes.md) for an example
+    Defines an additional custom build type or overrides one of the default ones (chosen on the command line using --build=...)
 
     ```sdl
     ...
@@ -305,7 +313,7 @@ Some example license specifications:
 
 === "dub.json"
 
-    Defines additional custom build types or overrides the default ones (chosen on the command line using --build=...) - see the [build types page](../dub-reference/buildtypes.md) for an example
+    Defines additional custom build types or overrides the default ones (chosen on the command line using --build=...)
 
     ```json
     ...
@@ -317,6 +325,10 @@ Some example license specifications:
     ```
 
     Type: `T[string]`
+
+!!! see-also "See also"
+
+    * see [build types](./buildtypes.md) for usage and behavior
 
 ## `x:ddoxFilterArgs`
 

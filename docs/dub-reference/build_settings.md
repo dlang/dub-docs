@@ -1,8 +1,4 @@
 # Build settings
-!!! tip
-    ![Book Icon](../images/book.png){width="20" height="20"} **For details on defining configurations, refer to the [Configuration Syntax](../dub-reference/package_settings.md#configurations).**
-
-
 
 Build settings influence the command line options passed to the compiler and linker. All settings are optional.
 
