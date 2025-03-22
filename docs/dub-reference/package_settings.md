@@ -27,7 +27,7 @@ Technically uppercase characters are parsed, but not valid for publishing and wi
     name "openssl"
     ```
 
-    Syntax: name "<package-name>"
+    Syntax: `name "<package-name>"`
 
 === "dub.json"
 
@@ -53,7 +53,7 @@ Descriptions longer than 100 bytes will be cut off at 98 bytes when displayed in
     description "A little web service of mine."
     ```
 
-    Syntax: description "<package-description>"
+    Syntax: `description "<package-description>"`
 
 === "dub.json"
 
@@ -90,7 +90,7 @@ The package can specify version requirements for the toolchain. Each requirement
     toolchainRequirements dmd="no" gdc="no" ldc=">=1.11.0"
     ```
 
-    Syntax: toolchainRequirements "<requirement1>" [ "<requirement2>" ... ]
+    Syntax: `toolchainRequirements "<requirement1>" [ "<requirement2>" ... ]`
 
 === "dub.json"
 
@@ -130,7 +130,7 @@ URL of the project website
     homepage "http://myproject.example.com"
     ```
 
-    Syntax: homepage "<project-url>"
+    Syntax: `homepage "<project-url>"`
 
 === "dub.json"
 
@@ -152,7 +152,7 @@ List of project authors (the suggested format is either `"Peter Parker"` or `"Pe
     authors "Peter Parker <pparker@example.com>"
     ```
 
-    Syntax: authors "<author1>" [ "<author2>" ... ]
+    Syntax: `authors "<author1>" [ "<author2>" ... ]`
 
 === "dub.json"
 
@@ -174,7 +174,7 @@ Copyright declaration string
     copyright "Copyright © 2023, John Doe"
     ```
 
-    Syntax: copyright "<copyright-string>"
+    Syntax: `copyright "<copyright-string>"`
 
 === "dub.json"
 
@@ -196,7 +196,7 @@ License(s) under which the project can be used.
     license "GPL-2.0"
     ```
 
-    Syntax: license "<license-specification>"
+    Syntax: `license "<license-specification>"`
 
 === "dub.json"
 
@@ -241,7 +241,7 @@ Some example license specifications:
     subPackage "./component2/"
     ```
 
-    Syntax: subPackage "<path>" or { ... }
+    Syntax: `subPackage "<path>" or { ... }`
 
 === "dub.json"
 
@@ -270,7 +270,7 @@ Some example license specifications:
     }
     ```
 
-    Syntax: configuration "<configuration-name>" { ... }
+    Syntax: `configuration "<configuration-name>" { ... }`
 
 === "dub.json"
 
@@ -301,7 +301,7 @@ Some example license specifications:
     }
     ```
 
-    Syntax: buildType "<build-name>" { ... }
+    Syntax: `buildType "<build-name>" { ... }`
 
 === "dub.json"
 
@@ -331,7 +331,7 @@ Specifies a list of command line flags usable for controlling filter behavior fo
         "--min-protection=Protected"
     ```
 
-    Syntax: x:ddoxFilterArgs "<arg1>" [ "<arg2>" ... ]
+    Syntax: `x:ddoxFilterArgs "<arg1>" [ "<arg2>" ... ]`
 
 === "dub.json"
 
