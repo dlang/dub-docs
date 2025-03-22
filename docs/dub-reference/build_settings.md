@@ -1,4 +1,8 @@
 # Build settings
+!!! tip
+    ![Book Icon](../images/book.png){width="20" height="20"} **For details on defining configurations, refer to the [Configuration Syntax](../dub-reference/package_settings.md#configurations).**
+
+
 
 Build settings influence the command line options passed to the compiler and linker. All settings are optional.
 
@@ -1054,5 +1058,4 @@ Example:
 
 Injected source files will import files from the context of the project that depends on the dependency defining them.
 
-> 📚 For detailed syntax and examples, refer to the [Package Format Documentation](https://dub.pm/dub-reference/package_settings/#configurations).
 
