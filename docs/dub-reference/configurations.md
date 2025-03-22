@@ -1,6 +1,4 @@
 # Configurations
-!!! tip
-    ![Book Icon](../images/book.png){width="20" height="20"} **For details on defining configurations, refer to the [Configuration Syntax](../dub-reference/package_settings.md#configurations).**
 
 DUB combines build options and requirements from two sources when building:
 
@@ -10,6 +8,10 @@ DUB combines build options and requirements from two sources when building:
 While technically the two things are often very similar, semantically it makes sense to split them into two distinct categories. While build types often generically apply to any configuration and adjust how it is run, configurations rather represent different possible options and configurations of your project that may be chosen between.
 
 Using [`dub build --print-configs`](../cli-reference/dub-build.md) it's possible to list the available configurations and which one is the default.
+
+!!! see-also "See also"
+
+    * for defining configurations, refer to [`configurations` in package settings](../dub-reference/package_settings.md#configurations).
 
 ## Default configuration
 
