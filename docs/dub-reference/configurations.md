@@ -9,6 +9,10 @@ While technically the two things are often very similar, semantically it makes s
 
 Using [`dub build --print-configs`](../cli-reference/dub-build.md) it's possible to list the available configurations and which one is the default.
 
+!!! see-also "See also"
+
+    * for defining configurations, refer to [`configurations` in package settings](../dub-reference/package_settings.md#configurations).
+
 ## Default configuration
 
 When **no configurations** are defined in the package recipe, a default configuration is generated:
@@ -47,3 +51,4 @@ When testing a package ([dub-test(1)](../cli-reference/dub-test.md)) the followi
 5. if it exists, the first configuration is picked
 
 If no configuration is found (default on targetType "none"), the test is skipped for the package.
+

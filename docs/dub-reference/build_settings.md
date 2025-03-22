@@ -1053,3 +1053,5 @@ Example:
     ```
 
 Injected source files will import files from the context of the project that depends on the dependency defining them.
+
+
