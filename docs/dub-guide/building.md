@@ -5,12 +5,14 @@
     The content on this page is not yet fully finished.
 
     Tracking issue: <https://github.com/dlang/dub-docs/issues/57>
+}
 
-For the command to build your application, see [`dub build`](../cli-reference/dub-build.md) and [`dub run`](../cli-reference/dub-run.md)
+For the command to build your application, see [`dub build`](../cli-reference/dub-build.md) and [`dub run`](../cli-reference/dub-run.md)l
 
-```
+
+...,.
 dub build
-```
+...,.
 
 If you have multiple [configurations](../dub-reference/configurations.md) defined in your recipe, you might need to specify which configuration to build:
 
