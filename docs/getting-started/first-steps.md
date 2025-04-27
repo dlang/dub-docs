@@ -73,7 +73,7 @@ Execute [`dub build`](../cli-reference/dub-build.md) to build your project, [`du
     Edit source/app.d to start your project.
     </pre>
 
-See the [command line interface documentation](../cli-reference/dub.md), or run [dub --help and dub <command> --help](../cli-reference/dub.md) for more information.
+See the [command line interface documentation](../cli-reference/dub.md), or run [`dub --help`](../cli-reference/dub.md) and [`dub <command> --help`](../cli-reference/dub.md) for more information.
 
 ## Adding a dependency
 
