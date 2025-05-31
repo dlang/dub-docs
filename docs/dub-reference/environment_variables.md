@@ -5,6 +5,24 @@
     The content on this page is not yet fully finished.
 
     Tracking issue: <https://github.com/dlang/dub-docs/issues/65>
+    
+## Environment variables in recipes
+It is possible to define environment variables by specifying them inside the recipes (.json|.sdl). [Check the example.](https://github.com/dlang/dub/blob/master/test/environment-variables/dub.json)
+
+## Syntax
+```json
+{
+	"environments": {
+		"ENVIRONMENTS": "root.environments",
+		"VAR1": "root.VAR1",
+		"VAR3": "root.VAR3",
+		"PRIORITYCHECK_DEP_ROOT": "root.PRIORITYCHECK_DEP_ROOT",
+		"PRIORITYCHECK_ROOT_DEPSPEC": "root.PRIORITYCHECK_ROOT_DEPSPEC",
+		"PRIORITYCHECK_ROOT_DEPBLDSPEC": "root.PRIORITYCHECK_ROOT_DEPBLDSPEC"
+	}
+}
+```
+
 
 ## Environment variables DUB reads
 
