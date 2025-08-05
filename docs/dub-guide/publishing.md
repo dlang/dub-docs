@@ -8,7 +8,7 @@ You should then adjust the package recipe (`dub.json` / `dub.sdl`) to fit the pr
 
 ## Registering with the registry
 
-If you want to publish your project, simply put the contents into a repository and push it to [GitHub](https://github.com/), [GitLab](https://gitlab.com/) or [Bitbucket](https://bitbucket.org/). You can then [register an account](https://code.dlang.org/register) on DUB and register the package using your GitHub/GitLab/Bitbucket user name (or organization) and the project name. Anyone who adds the name of your project as a dependency to his/her package recipe will automatically have the contents of your git repository available to his/her project.
+If you want to publish your project, simply put the contents into a repository and push it to [GitHub](https://github.com/), [GitLab](https://gitlab.com/) or [Bitbucket](https://bitbucket.org/). You can then [register an account](https://code.dlang.org/register) on DUB and register the package using your GitHub/GitLab/Bitbucket user name (or organization) and the project name. Anyone who adds the name of your project as a dependency to their package recipe will automatically have the contents of your git repository available to their project.
 
 ## Version tags
 
