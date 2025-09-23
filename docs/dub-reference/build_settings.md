@@ -434,6 +434,30 @@ On Posix platforms dub will try to find the correct linker flags by first checki
 
 See also: [platform specifications](./platform_specifications.md)
 
+## `frameworks`
+
+=== "dub.sdl"
+
+    ```sdl
+    ...
+    frameworks "Foundation" "AppKit"
+    ```
+
+    Arguments: `"<lib1>" ["<lib2>" [...]]`
+
+=== "dub.json"
+
+    ```json
+    ...
+    "frameworks": ["Foundation", "AppKit"]
+    ```
+
+    Type: `string[]`
+
+A list of external framework names - Used only for darwin platforms. Foundation is translated to the proper linker flag (e.g. "Framework" gets translated to "-L-framework -LFoundation").
+
+On other platforms, this confiurations doesn't do anything and a warning is emitted.
+
 ## `sourceFiles`
 
 === "dub.sdl"
@@ -737,6 +761,27 @@ Example usage in D code:
 
     `<binary content>`
 
+## `cImportPaths`
+
+=== "dub.sdl"
+
+    ```sdl
+    ...
+    cImportPaths "csource" "extern_c"
+    ```
+
+    Arguments: `"<path1>" ["path2" [...]]`
+
+=== "dub.json"
+
+    ```json
+    ...
+    "cImportPaths": ["csource", "extern_c"]
+    ```
+    
+    Type: `string[]`
+    
+
 ## `preGenerateCommands`
 
 === "dub.sdl"
@@ -757,6 +802,15 @@ Example usage in D code:
     ```
 
     Type: `string[]`
+
+Additional import paths to search for C files.
+
+Adds a C preproessor flag which is used to import the C files. This is the flag one must use if they are interested in importC.
+
+
+
+This corresponds to adding `-P-I` flags in DMD.
+
 
 A list of shell commands that is always executed before project generation is started.
 
