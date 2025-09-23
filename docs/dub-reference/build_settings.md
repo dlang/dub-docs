@@ -2,6 +2,8 @@
 
 Build settings influence the command line options passed to the compiler and linker. All settings are optional.
 
+Build settings are specified at a global scope, but can also be set to override settings within [inline sub-packages](./package_settings.md#subpackages), [custom configurations](./package_settings.md#configurations) and [build types](./package_settings.md#buildtypes) (with minor limitations).
+
 Most (but not all) settings support [platform specifications](./platform_specifications.md) to only apply the settings on certain targets.
 
 Additionally it is possible to use environment variables inside of build setting values using dollar notation. Any variable not matching a predefined name will be taken from the program environment. To denote a literal dollar sign, use `$$`. Refer to [the specification](../dub-reference/environment_variables.md) for more details.
