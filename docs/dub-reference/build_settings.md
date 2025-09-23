@@ -780,7 +780,14 @@ Example usage in D code:
     ```
     
     Type: `string[]`
-    
+
+Additional import paths to search for C files.
+
+Adds a C preproessor flag which is used to import the C files. This is the flag one must use if they are interested in [importC](https://dlang.org/spec/importc.html).
+
+
+This corresponds to adding `-P-I` flags in DMD and LDC.
+
 
 ## `preGenerateCommands`
 
@@ -802,15 +809,6 @@ Example usage in D code:
     ```
 
     Type: `string[]`
-
-Additional import paths to search for C files.
-
-Adds a C preproessor flag which is used to import the C files. This is the flag one must use if they are interested in importC.
-
-
-
-This corresponds to adding `-P-I` flags in DMD.
-
 
 A list of shell commands that is always executed before project generation is started.
 
