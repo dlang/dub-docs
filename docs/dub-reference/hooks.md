@@ -18,7 +18,9 @@ Order of build commands in the general case:
     2. _compiler running_
     3. [`postBuildCommands`](./build_settings.md#postbuildcommands)
 3. [`postGenerateCommands`](./build_settings.md#postgeneratecommands)
-4. if run or test is triggered:
+4. only without build option syntaxOnly:
+    1. [`copyFiles`](./build_settings.md#copyfiles) files and folders are being copied
+5. if run or test is triggered:
     1. [`preRunCommands`](./build_settings.md#preruncommands)
     2. _app or test running_
     3. [`postRunCommands`](./build_settings.md#postruncommands)
