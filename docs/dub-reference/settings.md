@@ -14,18 +14,24 @@ Windows:
 
 1. `%ProgramData%\dub\settings.json`
 2. `<dub executable folder>\..\etc\dub\settings.json`
-3. `%APPDATA%\dub\settings.json`
+3. `%DUB_HOME%\settings.json`
 4. `%ROOT_PACKAGE_DIR%\dub.settings.json`
 
 POSIX:
 
 1. `/var/lib/dub/settings.json`
-2. `/etc/dub/settings.json` (only if DUB has been installed in `/usr/...`)
 3. `<dub executable folder>/../etc/dub/settings.json`
-4. `~/.dub/settings.json`
+2. `/etc/dub/settings.json` (only if DUB has been installed in `/usr/...`)
+4. `$DUB_HOME/settings.json`
 5. `$ROOT_PACKAGE_DIR/dub.settings.json`
 
 The last item in each of these lists has the highest priority. All configuration files will be merged, with each specified property overriding the previously specified properties.
+
+If no `DUB_HOME` variable is set, it will default to
+
+- `$DPATH/dub/` if `DPATH` is set, otherwise
+- `%APPDATA%\dub\` on Windows
+- `~/.dub/` on POSIX
 
 A settings.json file could look like this:
 
@@ -77,6 +83,7 @@ Sets a mode for skipping the search on certain package registry types:
 Additional paths that contain packages in subfolders with the pattern `"(name)-(version)/(name)/"`.
 
 Can be used to provide prebuilt DUB libraries (e.g. for distribution package maintainers).
+
 ### `defaultCompiler`
 
 **Type:** `string`
@@ -84,16 +91,26 @@ Can be used to provide prebuilt DUB libraries (e.g. for distribution package mai
 Specifies the compiler binary to use (can be a path).
 
 Arbitrary pre- and suffixes to the identifiers below are recognized (e.g. `ldc2` or `dmd-2.063`) and matched to the proper compiler type: `dmd`, `gdc`, `ldc`, `gdmd`, `ldmd`
+
 ### `defaultArchitecture`
 
 **Type:** `string`
 
 Force a different architecture (e.g. `x86` or `x86_64`)
+
 ### `defaultLowMemory`
 
 **Type:** `bool`
 
 Enable the garbage collector for the compiler(dmd/ldc), reducing the compiler memory requirements but increasing compile times.
+
+### `dubHome`
+
+**Type:** `string`
+
+If no `DUB_HOME` or `DPATH` environment variables are set, it's possible to specify a system-wide default for them. If specified in the system-wide configuration files, this also replaces the default user config location path. While specifying `dubHome` inside the default user configuration or per-package config doesn't allow loading another configuration file, it still allows modifying where the package cache is stored.
+
+This setting is primarily intended to be used by package distributors. See [`$DUB_HOME`](./dub_home.md) for more info.
 
 ## Environment Variables
 
