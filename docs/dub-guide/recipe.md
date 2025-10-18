@@ -58,7 +58,7 @@ view all available top-level settings.
 
 ## Platform specific settings
 
-Platform specific settings are supported through the use of field name suffixes. Suffixes are dash separated list of operating system/architecture/compiler identifiers, as defined in the [D language reference](http://dlang.org/version.html#PredefinedVersions), but converted to lower case. The order of these suffixes is `os-architecture-compiler`, where any of these parts can be left off. Additionally on Windows the architectures `x86_omf` and `x86_mscoff` can be used with dmd to differentiate between 32 bit object formats used with the `--arch` switch. Examples:
+Platform specific settings are supported through the use of field name suffixes. Suffixes are dash separated list of operating system/architecture/compiler identifiers, as defined in the [D language reference](http://dlang.org/version.html#PredefinedVersions), but converted to lower case. The order of these suffixes is `os-architecture-compiler`, where any of these parts can be left off. For more information see [Platform Specifications](../dub-reference/platform_specifications.md). Examples:
 
 === "dub.sdl"
 
