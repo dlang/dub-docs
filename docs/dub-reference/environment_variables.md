@@ -5,7 +5,7 @@
     The content on this page is not yet fully finished.
 
     Tracking issue: <https://github.com/dlang/dub-docs/issues/65>
-    
+
 ## Environment variables in recipes
 It is possible to define environment variables by specifying them inside the recipes (.json|.sdl). [Check the example.](https://github.com/dlang/dub/blob/master/test/environment-variables/dub.json)
 
@@ -26,8 +26,8 @@ It is possible to define environment variables by specifying them inside the rec
 
 ## Environment variables DUB reads
 
-- `DUB_HOME`
-- `DPATH`
+- [`DUB_HOME`](./dub_home.md)
+- [`DPATH`](./dub_home.md)
 - `DFLAGS`
 - `http_proxy`
 - `no_proxy`
